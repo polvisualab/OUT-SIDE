@@ -11,10 +11,12 @@ body {
 
 main {
   overflow: scroll;
+  height: auto;
 }
 
 .main-container {
   overflow: scroll;
+  height: 100%;
 }
 
 .info-quote-container {
