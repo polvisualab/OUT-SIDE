@@ -33,7 +33,7 @@ canvas {
   z-index: 2;
 
   pointer-events: auto;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .info-quote-container {

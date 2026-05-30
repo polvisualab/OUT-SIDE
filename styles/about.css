@@ -9,7 +9,7 @@
   ABOUT 
    ========================= */
 body {
-  overflow: auto;
+  overflow-y: auto;
 }
 
 /* =========================
@@ -18,9 +18,24 @@ body {
 .about-container {
   display: flex;
   flex-direction: column;
-  gap: 12vh;
-  padding: 4% 10%;
+  gap: 4rem;
+  padding: 5% 15%;
   text-align: justify;
+  padding-top: 40%;
+  line-height: 1.1;
+  margin-bottom: 50%;
+}
+
+.div1 {
+  transform: rotate(-12deg);
+}
+
+.div2 {
+  transform: rotate(12deg);
+}
+
+.div3 {
+  transform: rotate(-10deg);
 }
 
 .div1,
@@ -30,7 +45,6 @@ body {
   grid-row: unset;
   /* opacity 0 para que ScrollTrigger la controle */
   opacity: 1;
-  transform: translateY(24px);
 }
 
 /* =========================
@@ -41,7 +55,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
+  color: var(--font-secondary);
 
   position: absolute;
   bottom: 0;
@@ -50,6 +65,8 @@ footer {
   .footer-info {
     bottom: 0;
     width: 100%;
+
+    color: var(--color-secondary);
 
     font-family: var(--font-secondary);
     text-transform: uppercase;
@@ -67,6 +84,7 @@ footer {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 8px;
+    margin: 0;
 
     padding: 10%;
 
