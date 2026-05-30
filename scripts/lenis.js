@@ -1,10 +1,8 @@
 // lenis.js
-import Lenis from "https://cdn.skypack.dev/@studio-freight/lenis";
+import Lenis from "https://unpkg.com/lenis@1.1.14/dist/lenis.mjs";
 
 const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smooth: true,
+  lerp: 0.08, // 0.01 muy lento — 0.2 casi sin efecto
 });
 
 function raf(time) {

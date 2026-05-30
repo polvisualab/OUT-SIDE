@@ -117,7 +117,7 @@ a:hover {
   padding: 0 1rem;
 
   position: fixed;
-  top: var(--spacing-large);
+  top: var(--spacing-xsmall);
   right: var(--spacing-medium);
 
   z-index: 2;
@@ -273,6 +273,10 @@ a:hover {
     .img-layer-mobile {
       display: none;
     }
+  }
+
+  .menu-nav-general {
+    top: var(--spacing-medium);
   }
 
   a {

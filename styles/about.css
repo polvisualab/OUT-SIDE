@@ -118,7 +118,12 @@ footer {
     transform: rotate(-12deg);
   }
 
-  .footer-info {
-    font-size: 3rem;
+  footer {
+    height: 90px;
+
+    .footer-info {
+      padding: 0 10%;
+      font-size: 1.6rem;
+    }
   }
 }
