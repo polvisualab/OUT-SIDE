@@ -19,6 +19,11 @@ main {
   height: 100%;
 }
 
+.info-container {
+  /* Esto es lo que me estaba dando problema para el foookin scroll */
+  height: 100%;
+}
+
 .info-quote-container {
   transform: rotate(-12deg);
   padding: 2rem;
