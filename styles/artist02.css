@@ -50,13 +50,10 @@ canvas {
 }
 
 .sticky-img {
-  position: sticky;
-  top: 0;
-  justify-items: center;
   width: 100%;
 
   img {
-    width: 50%;
+    width: 100%;
   }
 }
 

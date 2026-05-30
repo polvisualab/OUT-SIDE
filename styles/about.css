@@ -15,6 +15,10 @@ body {
 /* =========================
   ABOUT CONTAINER
    ========================= */
+.about-info {
+  overflow: scroll;
+}
+
 .about-container {
   display: flex;
   flex-direction: column;
@@ -69,6 +73,7 @@ footer {
     color: var(--color-secondary);
 
     font-family: var(--font-secondary);
+    font-size: 1.1rem;
     text-transform: uppercase;
     text-align: justify;
     line-height: 1;

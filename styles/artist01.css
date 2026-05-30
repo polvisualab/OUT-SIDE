@@ -4,3 +4,39 @@
 @import "./variables.css";
 @import "./reset.css";
 @import "./fonts.css";
+
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.info-quote-container {
+  transform: rotate(-12deg);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.interview-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticky-img {
+  min-width: 80px;
+  max-width: 150px;
+}
+
+.artist-01-container {
+  margin-top: 40%;
+}
+
+/* =========================
+   MEDIA QUERIES
+   ========================= */
+@media (min-width: 768px) {
+  .artist-01-container {
+    margin-top: 2%;
+  }
+}
