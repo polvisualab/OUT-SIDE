@@ -10,10 +10,6 @@ body {
   overflow-x: hidden;
 }
 
-.menu-logo a {
-  background-color: transparent;
-}
-
 canvas {
   z-index: 1;
   position: absolute;

@@ -53,6 +53,10 @@
     padding-bottom: 2rem;
   }
 
+  .menu-logo a {
+    background-color: transparent;
+  }
+
   /* -- Rotation -- */
   .el-rot-pos {
     transform: rotate(-12deg);
