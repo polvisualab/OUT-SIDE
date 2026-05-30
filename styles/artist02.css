@@ -64,6 +64,7 @@ canvas {
 .interaction-container {
   height: 40px;
   width: 100%;
+  bottom: 0;
 
   .text-mobile {
     display: block;

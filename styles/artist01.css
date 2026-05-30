@@ -88,7 +88,63 @@ main {
   }
   100% {
     transform: translateX(-50%);
-  } /* -50% porque los items están duplicados */
+  }
+}
+
+/* ========================
+FLOATS
+======================== */
+.float-container {
+  position: relative;
+  width: 100%;
+  height: 80svh; /* o la altura que necesites */
+  /* SIN overflow: hidden */
+}
+
+.float-item {
+  position: absolute;
+  width: 50%;
+  height: auto;
+  top: 0;
+  left: 0;
+  cursor: grab;
+  user-select: none;
+  will-change: transform;
+}
+
+.float-item.dragging {
+  cursor: grabbing;
+  z-index: 100;
+}
+
+.interaction-container {
+  height: 40px;
+  width: 100%;
+  top: 0;
+
+  .text-mobile {
+    display: block;
+  }
+
+  .text-desktop {
+    display: none;
+  }
+}
+
+.closing-img {
+  animation: float 7s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(100px);
+  }
 }
 
 /* =========================
