@@ -6,7 +6,8 @@
 @import "./fonts.css";
 
 body {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .menu-logo a {
@@ -32,6 +33,7 @@ canvas {
   z-index: 2;
 
   pointer-events: auto;
+  overflow-x: hidden;
 }
 
 .info-quote-container {
