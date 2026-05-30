@@ -47,6 +47,50 @@ main {
   margin-top: 40%;
 }
 
+.model-container {
+  width: 100%;
+  height: 500px;
+  background-color: var(--color-primary);
+}
+
+/* ===== SLIDER ANIMATION ===== */
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: slider-scroll 30s linear infinite;
+}
+
+.slider-item {
+  flex-shrink: 0;
+  width: 380px; /* ajusta según el ancho que quieras por item */
+  height: 500px; /* ajusta la altura */
+  overflow: hidden;
+}
+
+.slider-item img,
+.slider-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes slider-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  } /* -50% porque los items están duplicados */
+}
+
 /* =========================
    MEDIA QUERIES
    ========================= */

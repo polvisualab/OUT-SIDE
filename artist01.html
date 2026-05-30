@@ -17,11 +17,13 @@
     <link rel="stylesheet" href="./styles/artist01.css" />
 
     <!-- THREE JS -->
+    <!-- ==== SCRIPTS ==== -->
     <script type="importmap">
       {
         "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.155.0/examples/jsm/"
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+          "gsap": "https://cdn.skypack.dev/gsap"
         }
       }
     </script>
@@ -138,6 +140,7 @@
                 </p>
               </div>
 
+              <!-- Interview white bg -->
               <div class="cont-interview">
                 <!-- Video -->
                 <video
@@ -245,7 +248,119 @@
               </div>
 
               <!-- MODEL 3D 01 -->
-              <div class="3d-model-container"></div>
+              <div class="model-container" id="model-container"></div>
+
+              <!-- Interview white bg -->
+              <div class="cont-interview">
+                <!-- Interview Start -->
+                <h2 class="text-question">
+                  ¿Crees que sin su apoyo no te hubieses atrevido?
+                </h2>
+                <p class="text-long-paragraph">
+                  Cuando estás en esa edad, de 18 años, al final sí que me
+                  importaba mucho su validación. Pero pensé que si ellos me
+                  estaban apoyando, significa que igual puedo, ¿no? Me siento
+                  una privilegiada porque mis padres sí que eran muy abiertos de
+                  mente y me apoyaron y me siguen apoyando en todo momento.
+                  Porque igual me podrían haber dicho lo típico de hacer
+                  Ingeniería.
+                </p>
+
+                <h2 class="text-question">
+                  ¿Notaste algún cambio al pasarte a artes?
+                </h2>
+                <p class="text-long-paragraph">
+                  Sí. Por una vez no era una estudiante mediocre, sino que por
+                  primera vez los profesores me animaban. Fue como ver la luz y
+                  pensar qué fácil es todo cuando me gusta lo que estudio, que
+                  fácil es sacar buenas notas, aprender o prestar atención.
+                </p>
+
+                <h2 class="text-question">
+                  En tus dibujos y diseños veo mucha referencia medieval, ¿de
+                  dónde viene esa influencia?
+                </h2>
+                <p class="text-long-paragraph">
+                  Me gusta mucho ese mundo. Simbólicamente me parece muy
+                  interesante la idea del castillo, lo que fue en su momento y
+                  lo que es hoy, cómo un espacio cambia tanto con el tiempo.
+                  Claro que puedo estudiar cómo vivían en aquel momento, pero
+                  siempre me queda como una ventana de que ahí puede entrar mi
+                  imaginación y puedo pensar diferentes historias.
+                </p>
+
+                <h2 class="text-question">
+                  ¿Puede ser que esta época medieval esté relacionada con parte
+                  de tu vida?
+                </h2>
+                <p class="text-long-paragraph">
+                  Puede ser. Creo que es porque mis padres, cuando era pequeña,
+                  tenían una autocaravana e íbamos de viaje por Francia, por
+                  España y por diferentes sitios. Muchas veces veíamos lugares
+                  con castillos y creo que en esos países hay bastantes muy
+                  bonitos. Creo que las referencias que tomo siempre son cosas
+                  que me recuerdan a mi infancia, pero también cosas que me
+                  siguen gustando y que quiero seguir reinventando.
+                </p>
+              </div>
+
+              <!-- Video carrousel slider -->
+              <div class="slider">
+                <div class="slider-track">
+                  <div class="slider-item">
+                    <img
+                      src="./assets/artist01/img/naia-01.webp"
+                      alt="slide-01" />
+                  </div>
+                  <div class="slider-item">
+                    <img
+                      src="./assets/artist01/img/naia-01.webp"
+                      alt="slide-01" />
+                  </div>
+                  <div class="slider-item">
+                    <img
+                      src="./assets/artist01/img/naia-01.webp"
+                      alt="slide-01" />
+                  </div>
+                  <div class="slider-item">
+                    <img
+                      src="./assets/artist01/img/naia-01.webp"
+                      alt="slide-01" />
+                  </div>
+                  <div class="slider-item">
+                    <img
+                      src="./assets/artist01/img/naia-01.webp"
+                      alt="slide-01" />
+                  </div>
+
+                  <!-- Duplicado para loop continuo -->
+                  <div class="slider-item">
+                    <img
+                      src="./assets/artist01/img/naia-01.webp"
+                      alt="slide-01" />
+                  </div>
+                  <div class="slider-item">
+                    <img
+                      src="./assets/artist01/img/naia-01.webp"
+                      alt="slide-01" />
+                  </div>
+                  <div class="slider-item">
+                    <img
+                      src="./assets/artist01/img/naia-01.webp"
+                      alt="slide-01" />
+                  </div>
+                  <div class="slider-item">
+                    <img
+                      src="./assets/artist01/img/naia-01.webp"
+                      alt="slide-01" />
+                  </div>
+                  <div class="slider-item">
+                    <img
+                      src="./assets/artist01/img/naia-01.webp"
+                      alt="slide-01" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -253,7 +368,6 @@
     </main>
 
     <!-- ==== SCRIPTS ==== -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script type="module" src="./scripts/aboutscript.js"></script>
     <script type="module" src="./scripts/general-scripts.js"></script>
     <script type="module" src="./scripts/artist01.js"></script>
