@@ -32,6 +32,10 @@ canvas {
   /* overflow-x: hidden; */
 }
 
+.about-info {
+  border: 1px solid var(--color-primary);
+}
+
 .info-quote-container {
   margin-top: 2rem;
   padding: 1rem 1.5rem 2rem 1.5rem;

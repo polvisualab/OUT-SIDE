@@ -23,8 +23,8 @@ main {
 }
 
 .artist-01-container {
-  /* Esto es lo que me estaba dando problema para el foookin scroll
-  height: 100%; */
+  /* Esto es lo que me estaba dando problema para el foookin scroll */
+  height: 100%;
 }
 .info-quote-container {
   transform: rotate(-12deg);
