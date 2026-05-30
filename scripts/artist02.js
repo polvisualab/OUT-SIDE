@@ -16,7 +16,7 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.shadowMap.enabled = true;
 document.body.appendChild(renderer.domElement);
 
-scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+scene.add(new THREE.AmbientLight(0xffffff, 3));
 
 const light1 = new THREE.DirectionalLight(0xffffff, 10);
 light1.position.set(-2, 4, 4);
