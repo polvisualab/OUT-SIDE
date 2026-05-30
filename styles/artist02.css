@@ -46,7 +46,8 @@ canvas {
 
   align-items: center;
   height: 300px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: var(--color-secondary);
 }
 
