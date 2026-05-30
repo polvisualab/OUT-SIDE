@@ -1,0 +1,70 @@
+/* =========================
+   RESET CSS
+   ========================= */
+
+/* 1. Quitar márgenes y paddings por defecto */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Mejor comportamiento de tipografía */
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Evitar estilos raros en body */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+/* 4. Listas sin estilos */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 5. Enlaces más limpios */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 6. Imágenes y media responsivas */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Formularios heredando fuente */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* 8. Botones sin estilos base raros */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 9. Evitar overflow accidental horizontal */
+html,
+body {
+  overflow-x: hidden;
+}

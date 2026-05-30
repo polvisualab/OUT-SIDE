@@ -1,0 +1,112 @@
+/* =========================
+   IMPORTS
+   ========================= */
+@import "./variables.css";
+@import "./reset.css";
+@import "./fonts.css";
+
+body {
+  overflow: auto;
+}
+
+.menu-logo a {
+  background-color: transparent;
+}
+
+canvas {
+  z-index: 1;
+  position: absolute;
+}
+
+.info-container {
+  position: absolute;
+
+  top: 48%;
+
+  /* Esto es lo que me estaba dando problema para el foookin scroll */
+  height: 100%;
+
+  padding: 0.5rem;
+  box-sizing: border-box;
+
+  z-index: 2;
+
+  pointer-events: auto;
+}
+
+.info-quote-container {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem 2rem 1.5rem;
+  transform: rotate(-12deg);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  height: 300px;
+  overflow: auto;
+  background-color: var(--color-secondary);
+}
+
+.sticky-img {
+  position: sticky;
+  top: 0;
+  justify-items: center;
+  width: 100%;
+
+  img {
+    width: 50%;
+  }
+}
+
+.interaction-container {
+  height: 40px;
+  width: 100%;
+
+  .text-mobile {
+    display: block;
+  }
+
+  .text-desktop {
+    display: none;
+  }
+}
+
+.text-question {
+  z-index: 10;
+}
+/* =========================
+   MEDIA QUERIES
+   ========================= */
+@media (min-width: 768px) {
+  .info-quote-container {
+    transform: rotate(0deg);
+  }
+
+  .info-container {
+    width: 40%;
+    transform: rotate(-2deg);
+    padding-left: 3rem;
+
+    top: 30%;
+  }
+  .intro {
+    width: 100%;
+    height: 60%;
+  }
+
+  .interaction-container {
+    height: 40px;
+    width: 100%;
+
+    .text-mobile {
+      display: none;
+    }
+
+    .text-desktop {
+      display: block;
+    }
+  }
+}

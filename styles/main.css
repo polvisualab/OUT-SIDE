@@ -1,0 +1,315 @@
+/* =========================
+   IMPORTS
+   ========================= */
+@import "./variables.css";
+@import "./reset.css";
+@import "./fonts.css";
+
+/* =========================
+   MAIN CSS
+   ========================= */
+* {
+  font-family: var(--font-main);
+  letter-spacing: -5%;
+}
+
+/* =========================
+   BODY
+   ========================= */
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  height: 100vh;
+  touch-action: none;
+}
+
+/* =========================
+   Ajustes Globales
+   ========================= */
+a {
+  padding: var(--spacing-small);
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-primary);
+
+  font-size: 1rem;
+}
+
+a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid var(--color-secondary);
+  font-weight: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+/* =========================
+   HERO
+   ========================= */
+#hero {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  .img-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 40%;
+    opacity: 0;
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+#hero .img-layer.visible {
+  opacity: 1;
+}
+
+/* =========================
+   NAV-GENERAL
+   ========================= */
+.menu-nav-general {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: right;
+  padding: 0 1rem;
+
+  position: fixed;
+  top: var(--spacing-large);
+  right: var(--spacing-medium);
+
+  z-index: 2;
+
+  .menu-logo {
+    padding-left: 1rem;
+  }
+
+  .menu-permanent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .menu-logo a {
+    border: none;
+  }
+
+  .menu-logo .svg-logo a:hover {
+    border: none;
+    background-color: none;
+    transition: none;
+  }
+}
+
+.menu-nav-general .menu-element:first-child {
+  transform: rotate(-12deg);
+  margin: var(--spacing-xsmall);
+}
+
+.menu-nav-general .menu-element:last-child {
+  transform: rotate(12deg);
+  margin: var(--spacing-xsmall);
+}
+
+.menu-nav-general .menu-element:hover {
+  transform: rotate(0);
+  transform-origin: center;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+/* =========================
+   NAV-ARTIST
+   ========================= */
+.menu-nav-artist {
+  width: 50%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  bottom: 14%;
+  left: 5%;
+  text-align: center;
+  z-index: 2;
+}
+
+.menu-nav-artist .menu-element:nth-child(odd) {
+  transform: rotate(10deg);
+}
+
+.menu-nav-artist .menu-element:nth-child(odd):hover {
+  transform: rotate(0);
+}
+
+.menu-nav-artist .menu-element:nth-child(even) {
+  transform: rotate(-10deg) translateX(-20px);
+}
+
+.menu-nav-artist .menu-element:nth-child(even):hover {
+  transform: rotate(0);
+}
+
+/* =========================
+   HOST (marquee)
+   ========================= */
+.host-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  display: block;
+  z-index: 3;
+}
+
+.host-marquee {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 2rem;
+  animation: host-scroll 20s linear infinite;
+  will-change: transform;
+  padding-top: 5px;
+}
+
+.host-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 0 0 auto;
+  padding-right: 2rem;
+}
+
+.host-img-cont {
+  width: 60px;
+  align-items: center;
+  flex: 0 0 60px;
+}
+
+.host-img-cont img {
+  border: 1px solid var(--color-secondary);
+  border-radius: 50%;
+  width: 80%;
+  display: block;
+}
+
+.host-container p {
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+@keyframes host-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================
+   MEDIA QUERIES
+   ========================= */
+@media (min-width: 768px) {
+  #hero {
+    svg {
+      height: 210%;
+      rotate: 90deg;
+      top: -50%;
+    }
+  }
+
+  a {
+    font-size: 1.5rem;
+  }
+
+  .host-container {
+    p {
+      font-size: 2rem;
+    }
+  }
+
+  .menu-nav-artist {
+    width: 30%;
+
+    a {
+      margin-bottom: 20px;
+    }
+  }
+
+  /* =========================
+   ABOUT
+   ========================= */
+
+  .about-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+
+    padding: 10%;
+
+    line-height: 100%;
+    font-size: 1.3em;
+    text-align: justify;
+  }
+
+  .div1 {
+    grid-row: span 5 / span 5;
+    transform: rotate(-12deg);
+  }
+
+  .div2 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 2;
+    transform: rotate(12deg);
+  }
+
+  .div3 {
+    grid-row: span 3 / span 3;
+    grid-column-start: 6;
+    grid-row-start: 3;
+    transform: rotate(-12deg);
+  }
+}

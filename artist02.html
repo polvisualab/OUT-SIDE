@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>IVAN ARMALASER</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="icon" href="./assets/favicon/outside-favicon.png" />
+
+    <!-- ==== STYLES ==== -->
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <!-- ==== ABOUT STYLES ==== -->
+    <link rel="stylesheet" href="./styles/artist02.css" />
+
+    <!-- THREE JS -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.155.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- ==== NAV-GENERAL ==== -->
+    <nav class="menu-nav-general space-between" id="nav-general">
+      <div class="menu-logo opacity-1">
+        <a class="svg-logo" href="./index.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="140"
+            height="75"
+            viewBox="0 0 140 75"
+            fill="none">
+            <path
+              d="M21.5993 51.1506C18.293 51.9208 15.2012 51.8582 12.3239 50.9628C9.44665 50.0675 6.97147 48.483 4.8984 46.2092C2.85016 43.8956 1.42023 41.0125 0.608618 37.56C-0.202995 34.1075 -0.202873 30.9084 0.608985 27.9626C1.44567 24.977 2.95374 22.4476 5.13319 20.3744C7.31263 18.3013 10.0555 16.8796 13.3618 16.1095C16.7006 15.3318 19.8086 15.3906 22.6859 16.2859C25.5956 17.1737 28.0583 18.7781 30.0742 21.0993C32.1148 23.3807 33.5409 26.2476 34.3526 29.7001C35.1642 33.1526 35.1678 36.3678 34.3636 39.3459C33.5841 42.2841 32.0885 44.7936 29.8766 46.8743C27.6972 48.9475 24.9381 50.3729 21.5993 51.1506ZM20.1657 45.0523C22.2079 44.5766 23.8645 43.6973 25.1356 42.4142C26.4067 41.1312 27.2503 39.5564 27.6662 37.6898C28.0746 35.7909 28.0019 33.6637 27.4482 31.3083C26.8945 28.9529 26.0152 27.0306 24.8104 25.5415C23.598 24.0202 22.1363 22.9653 20.4252 22.3769C18.7142 21.7885 16.8376 21.7321 14.7954 22.2078C12.7857 22.6759 11.1453 23.5515 9.87417 24.8345C8.63547 26.11 7.79573 27.701 7.35496 29.6074C6.93902 31.474 7.0079 33.585 7.56162 35.9405C8.11534 38.2959 8.99839 40.2343 10.2108 41.7556C11.448 43.2372 12.9059 44.2759 14.5846 44.8719C16.2956 45.4603 18.156 45.5204 20.1657 45.0523Z"
+              fill="black" />
+            <path
+              d="M52.9197 43.8552C50.3914 44.4441 47.9886 44.4763 45.7113 43.9517C43.434 43.4271 41.4443 42.308 39.7423 40.5944C38.0651 38.841 36.8624 36.4155 36.1342 33.318L31.2531 12.5547L38.0603 10.9691L42.9527 31.7808C43.3396 33.4264 43.9374 34.7335 44.7464 35.7022C45.5553 36.6709 46.5305 37.3286 47.6719 37.6754C48.8381 37.9823 50.1506 37.9658 51.6093 37.6261C53.0679 37.2863 54.2352 36.7251 55.1111 35.9425C56.0119 35.1201 56.6088 34.0962 56.902 32.8708C57.1952 31.6454 57.1483 30.2099 56.7615 28.5643L51.869 7.75262L58.6762 6.16704L63.5572 26.9304C64.2854 30.0279 64.2563 32.7403 63.47 35.0676C62.7085 37.355 61.3919 39.2442 59.52 40.7352C57.6482 42.2263 55.4481 43.2662 52.9197 43.8552Z"
+              fill="black" />
+            <path
+              d="M76.4391 37.7642L69.7604 9.3538L59.8414 11.6642L58.5558 6.19509L85.1522 0L86.4379 5.46913L76.5189 7.77955L83.1977 36.19L76.4391 37.7642Z"
+              fill="black" />
+            <path
+              d="M88.6704 22.8675L87.3392 17.2048L107.955 12.4027L109.286 18.0655L88.6704 22.8675Z"
+              fill="black" />
+            <path
+              d="M59.2885 74.4854C56.825 75.0592 54.5222 75.1531 52.38 74.7672C50.2704 74.3738 48.4586 73.5025 46.9448 72.1535C45.4311 70.8045 44.3887 68.9882 43.8177 66.7049L51.0138 65.0287C51.2738 65.9891 51.7217 66.8037 52.3576 67.4724C53.0258 68.1335 53.8345 68.5918 54.7834 68.8472C55.7324 69.1026 56.7742 69.0982 57.9087 68.834C58.9136 68.5999 59.7346 68.2385 60.3719 67.7497C61.0416 67.2534 61.5027 66.6695 61.7551 65.9981C62.04 65.3192 62.0838 64.5602 61.8866 63.7213C61.6742 62.8179 61.249 62.1001 60.6111 61.568C60.0056 61.0284 59.2446 60.6271 58.328 60.3642C57.4114 60.1012 56.3766 59.9168 55.2235 59.8111C54.0952 59.6655 52.8858 59.5388 51.5954 59.4309C48.7002 59.1864 46.3688 58.5043 44.6012 57.3845C42.866 56.2572 41.714 54.4836 41.1451 52.0636C40.6597 49.9986 40.7325 48.1268 41.3636 46.4483C42.0271 44.7623 43.1431 43.3282 44.7114 42.1461C46.3122 40.9564 48.2309 40.1011 50.4676 39.5801C52.769 39.044 54.8898 38.9755 56.8298 39.3744C58.7622 39.7411 60.4054 40.5495 61.7591 41.7997C63.1453 43.0423 64.1098 44.6725 64.6525 46.6901L57.3591 48.389C57.1522 47.6544 56.7823 47.0259 56.2492 46.5034C55.7085 45.9487 55.0523 45.557 54.2805 45.3284C53.5088 45.0998 52.6529 45.0949 51.7129 45.3139C50.8949 45.4704 50.1797 45.7731 49.5673 46.2221C48.9797 46.6312 48.5558 47.1553 48.2958 47.7945C48.0282 48.4013 47.9892 49.1081 48.1788 49.9147C48.3684 50.7214 48.7222 51.3537 49.2402 51.8116C49.7505 52.2373 50.3915 52.5644 51.1633 52.7931C51.9674 53.0141 52.8812 53.1927 53.9047 53.3286C54.9206 53.4323 56.0213 53.5333 57.2068 53.6315C59.0614 53.8121 60.7966 54.1397 62.4125 54.6141C64.0208 55.0563 65.3942 55.8084 66.5328 56.8705C67.7039 57.925 68.5321 59.4848 69.0175 61.5498C69.4423 63.3567 69.3667 65.1441 68.7908 66.9118C68.2072 68.6473 67.1341 70.1905 65.5712 71.5415C64.0084 72.8925 61.9141 73.8738 59.2885 74.4854Z"
+              fill="black" />
+            <path
+              d="M72.2531 70.8529L70.3178 35.569L77.1249 33.9834L79.0602 69.2674L72.2531 70.8529Z"
+              fill="black" />
+            <path
+              d="M85.4464 67.7798L77.482 33.9003L89.0541 31.2048C92.9763 30.2912 96.4009 30.2422 99.3279 31.0579C102.247 31.8413 104.622 33.3641 106.453 35.6262C108.309 37.8485 109.639 40.6698 110.443 44.09C111.24 47.478 111.305 50.5937 110.64 53.4372C110.008 56.2731 108.562 58.703 106.302 60.7267C104.068 62.7106 100.957 64.167 96.9699 65.0957L85.4464 67.7798ZM90.8882 60.3863L95.2643 59.367C97.9871 58.7328 100.024 57.7989 101.375 56.5653C102.751 55.2918 103.586 53.753 103.88 51.9489C104.166 50.1125 104.036 48.0327 103.49 45.7096C102.944 43.3864 102.137 41.4813 101.07 39.9943C99.9945 38.475 98.5566 37.4486 96.7558 36.9151C94.9875 36.3741 92.742 36.4207 90.0191 37.0549L85.6431 38.0742L90.8882 60.3863Z"
+              fill="black" />
+            <path
+              d="M117.488 60.3164L109.523 26.4369L132.036 21.1931L133.321 26.6623L117.616 30.3204L119.63 38.8871L133.876 35.5687L135.117 40.8443L120.87 44.1627L123.009 53.2617L138.714 49.6036L140 55.0727L117.488 60.3164Z"
+              fill="black" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="menu-permanent">
+        <a href="./about.html" class="menu-element">ACERCA DE</a>
+        <a href="" class="menu-element">ARCHIVO</a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- ==== CANVAS CONTAINER ==== -->
+      <div class="main-container">
+        <div class="canvas-col">
+          <canvas id="threejs-canvas"></canvas>
+        </div>
+
+        <!-- ==== INFO CONTAINER ==== -->
+        <div class="info-container">
+          <!-- START 1º PART -->
+          <!-- Intro -->
+          <div class="about-info intro div1">
+            <!-- Info Quote -->
+            <div class="info-quote-container">
+              <h2 class="artist-name">IVAN ARMALASER</h2>
+              <p class="quote-font">
+                “El grafiti es reivindicación.<br />De que estoy aquí, de que
+                existo”
+              </p>
+            </div>
+            <!-- Interviewer Container -->
+            <div class="interviewer-container">
+              <h3 class="interviewer-info">
+                POR Melanie German - MAYO 16 2026
+              </h3>
+              <div class="links-profiles">
+                <a href="" target="_blank">Instagram</a>
+              </div>
+            </div>
+            <!-- Interview Intro -->
+            <div>
+              <p class="text-long-intro italic">
+                Repetimos tantas acciones una y otra vez que, a veces, no somos
+                conscientes de ellas.El contexto actual nos hace ir en
+                automático. No hay tiempo para frenar y pensar “¿por qué estoy
+                haciendo esto?” o, ¿desde cuándo estoy haciendo esto?
+
+                <br /><br />Pero, ¿qué pasa cuando dejamos de hacer lo que ya
+                tenemos incorporado en nuestra cotidianidad? ¿Lo que nos da
+                vida, lo que nos hace ser felices?
+
+                <br /><br />Alucinado por el mundo del Hip-Hop, Iván descubrió
+                dos vertientes artísticas que marcarían su vida: Los vinilos y
+                el grafiti. Y, aunque intentó dejarlo, actualmente, con 48 años,
+                el adolescente entre el Hip-Hop y el Rap, sigue manteniendo
+                intacta su pasión.
+              </p>
+            </div>
+            <!-- IMG -->
+            <div class="img-artist">
+              <img
+                src="./assets/artist02/img/ivanarmalaser-artist.webp"
+                alt="ivanarmalaser-01"
+                width="auto" />
+            </div>
+
+            <!-- Interview Start -->
+            <div class="cont-interview">
+              <h2 class="text-question">
+                ¿Siendo una época tan digital, qué es lo que te atrae de mezclar
+                con vinilos?
+              </h2>
+              <p class="text-long-paragraph">
+                Bueno, cuando yo empecé de digital no había nada. A esto lo
+                descubrí a principio de los años 90’s, pero ya me llamaba la
+                atención desde hace bastante tiempo.
+              </p>
+
+              <h2 class="text-question">
+                ¿En qué momento te llamó la atención? ¿Cómo fue ese primer
+                encuentro?
+              </h2>
+              <p class="text-long-paragraph">
+                Un día un amigo se llevó los giradiscos que tenían sus padres a
+                su habitación, los modificó un poco para poder pinchar con
+                ellos, hacer scratch (manipular los vinilos) sin que saltara la
+                aguja y de ir algunas tardes a su casa, pues yo descubrí que era
+                eso lo que quería.
+              </p>
+
+              <h2 class="text-question">
+                ¿Crees que hay algo militante de seguir pinchando de esa manera,
+                de querer mantenerlo?
+              </h2>
+              <p class="text-long-paragraph">
+                Considero que no hay nada militante en seguir pinchando en
+                vinilo porque es como lo conocí, pero sí puede ser algo
+                militante no haber querido adquirir un sistema digital. No
+                aprender de ello o compatibilizarlo.
+              </p>
+
+              <h2 class="text-question">
+                Me interesa que nos comentes tu opinión sobre lo digital ¿Por
+                qué no tienes intención de mezclar los vinilos con este mundo?
+              </h2>
+              <p class="text-long-paragraph">
+                Creo que ambos mundos son muy respetables, pero diferentes. Cada
+                uno aporta un sonido distinto, tienen muchos puntos en común
+                porque puedes pinchar el mismo tipo de música, pero hacerlo en
+                vinilo aporta otra serie de cosas.
+              </p>
+
+              <h2 class="text-question">¿Podrías darme un ejemplo?</h2>
+              <p class="text-long-paragraph">
+                Pues, quien pincha en vinilo necesita cierto conocimiento que no
+                tiene por qué tener quien está en el mundo digital. El
+                conocimiento de discográficas sobre todo, porque si se pincha
+                música de 40 años para atrás, se necesita un conocimiento sobre
+                los discos, sobre quién los vende, redes de compraventa de
+                vinilos y otras cosas.
+              </p>
+
+              <!-- IMG -->
+              <div class="img-artist">
+                <img
+                  src="./assets/artist02/img/ivanarmalaser-01.jpeg"
+                  alt="ivanarmalaser-01"
+                  width="auto" />
+              </div>
+            </div>
+
+            <!-- Interview Middle Black BG-->
+            <div class="cont-interview middle-cont black-bg">
+              <h2 class="text-question">
+                Además de pinchar, eres escritor de graffiti. ¿Cómo comenzaste
+                con cada disciplina?
+              </h2>
+              <p class="text-long-paragraph">
+                Todo comenzó porque empecé a escuchar Hip-Hop cuando se puso de
+                moda en España. Sería en el año 1988 o 1989, cuando se editan
+                Madrid Hip-Hop y un recopilatorio de Barcelona, que es cuando se
+                difunde ampliamente en la sociedad española el mundo del Hip-Hop
+                y del grafiti. En esa época eso era todo muy militante, la gente
+                no se limitaba a escuchar música, querían hacer un poco todo.
+                Bailar breakdance, hacer grafitis, tener unos platos, escribir
+                unas rimas, llevar la estética. Entonces, como adolescente,
+                alucinado por la música negra y sabiendo más o menos dibujar, me
+                fui hacia esas dos vertientes.
+              </p>
+
+              <h2 class="text-question">
+                ¿Para tí es fundamental saber dibujar para hacer grafitis o pasa
+                por otro lado?
+              </h2>
+              <p class="text-long-paragraph">
+                Hay que saber dibujar, pero saber dibujar letras. Porque se
+                compite en cantidad y calidad en cuanto a las letras. Es decir,
+                hay gente que quiere tener su firma por toda la ciudad, pero
+                está todo colapsado de firmas de otras personas, entonces lo que
+                realmente quieres es tener un estilo propio que puedo
+                diferenciarte de otros escritores.
+              </p>
+
+              <h2 class="text-question">
+                El mundo del grafiti pasa un poco por el anonimato, ¿cómo ves el
+                ponerle voz a tu arte en esta entrevista?
+              </h2>
+              <p class="text-long-paragraph">
+                A mí me encanta hablar de esto y me encanta la historia en torno
+                al grafiti. Es raro, porque mucha gente que pinta desde hace
+                años no es capaz de explicar el por qué lo hace o los mecanismos
+                mentales que se activan al hacerlo. Simplemente lo hacen por una
+                necesidad que viene de hace tiempo y que necesitan seguir
+                haciendo, porque no lo pueden dejar.
+              </p>
+
+              <h2 class="text-question">
+                Dices que algo se activa cuando se grafitea. ¿Qué es lo que se
+                activa en ti?
+              </h2>
+              <p class="text-long-paragraph">
+                Uf, no sé. Diría que son de los momentos más libres, más felices
+                y más honestos de toda mi vida. Es hacer algo ilegal en donde
+                eres tú contra la ciudad, tú contra el capital, contra el
+                Estado, contra otros escritores. El poder entrar sin que te
+                descubran, el poder hacerlo, que a la mañana siguiente la gente
+                lo vea y les sorprenda. Te podría hablar de un millón de cosas
+                respecto a esto.
+              </p>
+            </div>
+
+            <!-- Interview Start -->
+            <div class="cont-interview">
+              <!-- IMG -->
+              <div class="img-artist sticky-img">
+                <img
+                  src="./assets/artist02/img/ivanarmalaser-02.png"
+                  alt="ivanarmalaser-01"
+                  width="auto" />
+              </div>
+
+              <h2 class="text-question">Cuéntanos más que nos interesa</h2>
+              <p class="text-long-paragraph">
+                Usas el nombre que tú has escogido, no el que te pusieron tus
+                padres. Entonces es cuando eres realmente tú de alguna manera,
+                no es la máscara que tienes que tener en el trabajo o en tus
+                relaciones sociales. Es la personalidad que tú has escogido y
+                cómo lo quieres hacer y en dónde lo quieres hacer.
+              </p>
+
+              <h2 class="text-question">
+                ¿Podemos saber bajo qué nombre firmás?
+              </h2>
+              <p class="text-long-paragraph">Orbe</p>
+
+              <h2 class="text-question">¿Tiene algún significado especial?</h2>
+              <p class="text-long-paragraph">
+                Sí. Realmente tiene un significado. Creo que ‘orbe’ significa la
+                totalidad del universo o algo de eso, la verdad es que no lo
+                escogí por ello. Yo firmaba con otra cosa, lo que pasa es que
+                había una persona en la punta de la ciudad donde vivo que
+                pintaba algo parecido. Entonces, modificando las letras, me
+                salió Orbe. Recuerdo que un día mi madre me vio dibujar y me
+                dijo: “Esto es lo que dice el Papa, urbi et orbi”.
+              </p>
+
+              <h2 class="text-question">
+                Al final terminaste creando un nombre religioso y todo
+                ¿Recuerdas la primera vez que saliste a pintar?
+              </h2>
+              <p class="text-long-paragraph">
+                La primera vez no porque no fue nada especial. Diría que en el
+                año 90 o 91 empezaría a hacer mis primeras cosas. Era algo que
+                yo observaba de gente más mayor. Recuerdo que iba sobre 5.º de
+                EGB y había gente más experimentada de 8.º, entonces veía y
+                primero copiaba en cuadernos, en cómics que tenía por casa. Fue
+                muy progresivo, no podría decir que hay un punto de inflexión.
+                Aunque en 1992 realicé mi primera masterpiece, una obra que
+                tiene su contorno, sus tres dimensiones, algún tipo de fondo.
+              </p>
+            </div>
+
+            <!-- Interview Middle Black BG-->
+            <div class="cont-interview middle-cont black-bg">
+              <h2 class="text-question">
+                ¿Algún tipo tuviste algún problema por pintar en la calle?
+              </h2>
+              <p class="text-long-paragraph">
+                Sí. Pintar en la calle es igual a tener que asumir problemas.
+                Problemas con la legalidad y con otros escritores. Al fin y al
+                cabo los espacios muchas veces son finitos y tienes que pisar a
+                otro y otro te va a pisar a ti. Eso es más que nada siendo
+                joven, ahora mismo ese tipo de cosas no le preocupan a uno. Pero
+                sí, pintar grafitis es igual a policías, multas, pagar y tener
+                el desprecio de otros escritores.
+              </p>
+
+              <h2 class="text-question">
+                ¿Eso te condiciona ahora mismo para salir?
+              </h2>
+              <p class="text-long-paragraph">
+                Mmm, no. Me condiciona más adaptarme al medio o cambiar algunas
+                letras. Además, los sitios ilegales donde pinto, aunque sean
+                ilegales, son sitios donde es difícil que me puedan pillar.
+              </p>
+
+              <h2 class="text-question">
+                ¿Cómo eliges los lugares que quieres intervenir?
+              </h2>
+              <p class="text-long-paragraph">
+                Ahora mismo pintaría en sitios donde la sociedad no tiene
+                acceso. Sitios donde solo pintaran escritores de grafitis y solo
+                lo vean ellos, a no ser que alguien sea fan de este arte, no lo
+                practique pero que tenga cierto gusto por verlo y se acerque a
+                ellos. Suele ser debajo de puentes, túneles de cercanías o cosas
+                así.
+              </p>
+
+              <h2 class="text-question">
+                ¿Cómo piensas que debe ser el grafiti?
+              </h2>
+              <p class="text-long-paragraph">
+                Yo soy un poco ortodoxo. Creo que el grafiti tiene que ser
+                basado en letras y con carácter ilegal. Que sea ilegal no
+                significa pintar en la plaza del pueblo en cinco minutos para
+                que lo vea todo el mundo. Ilegal significa que forma parte de tu
+                personalidad, el no querer tener interrelación con organismos
+                públicos, es decir, no pedir paredes, que no sepan de ti.
+              </p>
+            </div>
+
+            <!-- Interview Start -->
+            <div class="cont-interview">
+              <!-- IMG -->
+              <div class="img-artist sticky-img">
+                <img
+                  src="./assets/artist02/img/ivanarmalaser-03.png"
+                  alt="ivanarmalaser-01"
+                  width="auto" />
+              </div>
+
+              <h2 class="text-question">¿Cuál es tu estilo al grafitear?</h2>
+              <p class="text-long-paragraph">
+                Hay un tipo de grafiti como protesta que es de gente que pone
+                frases reivindicativas y tal. Ese tipo de grafiti ya existía
+                antes del grafiti del que estamos hablando nosotros, que es un
+                grafiti neoyorkino. Ese antes se llamaba writing, que consiste
+                en escribir un nombre y ponerlo en toda la ciudad. De hecho, un
+                escritor dice que el término ‘grafiti’ lo impusieron los mass
+                media. Pero este grafiti es distinto, tiene sus propias normas,
+                sus propias reglas y se llamaba así, grafiti writer.
+              </p>
+
+              <h2 class="text-question">
+                ¿Entonces el tipo de grafiti que realizas consta en poner tu
+                nombre?
+              </h2>
+              <p class="text-long-paragraph">
+                Sí, generalmente es poner mi nombre.
+              </p>
+
+              <h2 class="text-question">
+                ¿Crees que el grafiti sigue siendo una forma de protesta o que
+                hoy significa otra cosa?
+              </h2>
+              <p class="text-long-paragraph">
+                El grafiti nunca ha sido una forma de protesta. Es decir, no hay
+                un mensaje político, realmente el mensaje es uno mismo. Aunque,
+                en el barrio más pobre de New York, comenzó como una forma de
+                reivindicación de las personas.
+              </p>
+
+              <h2 class="text-question">Me interesa eso que nos cuentas</h2>
+              <p class="text-long-paragraph">
+                Claro. Había gente que ponía su nombre y ese nombre circulaba
+                por toda la ciudad porque se escribía en trenes que generalmente
+                no limpiaban. Entonces, un poco
+                <i>
+                  <b
+                    >es reivindicación de que estoy aquí, que existo, que no soy
+                    un número de la seguridad social,</b
+                  >
+                </i>
+                no soy un latino pobre que va a estar enganchado al crack dentro
+                de cinco años y ya está. Puedo ser un artista aunque no tenga
+                nada, aunque no tenga ningún tipo de cultura, ningún tipo de
+                formación, aunque pertenezca al estrato más bajo de la sociedad.
+                Estoy aquí y existo.
+              </p>
+            </div>
+
+            <!-- Interview Middle Black BG-->
+            <div class="cont-interview middle-cont black-bg">
+              <h2 class="text-question">
+                ¿Hoy qué lugar ocupa el grafiti en tu vida?
+              </h2>
+              <p class="text-long-paragraph">
+                El otro día lo estaba pensado y no es algo que me fuerce a
+                hacer, es algo natural que no puedo dejarlo. Llevo haciéndolo
+                desde los 12, 13 años y lo he intentado dejar. En plan, una
+                temporada que he dejado de pintar y he estado más dibujando o
+                produciendo como DJ y pensaba, qué bien estar aquí, sin tener
+                que pagar multas, sin tener que volver a las siete de la mañana
+                a casa. Pero llega el momento en el que necesito escribir.
+              </p>
+
+              <h2 class="text-question">
+                Es como si necesitaras de esa adrenalina
+              </h2>
+              <p class="text-long-paragraph">
+                Sí, bueno… La adrenalina es un componente, pero no lo es todo.
+                La adrenalina es principalmente para chavales jóvenes que
+                empiezan y les gusta mucho pintar en sitios como en la M-30, en
+                el metro, poder exhibir la hazaña en redes sociales o frente a
+                sus amigos del instituto. La adrenalina sería un componente,
+                pero no es lo más importante. La necesidad es escribir.
+              </p>
+
+              <h2 class="text-question">Que bonito, se te nota apasionado.</h2>
+              <p class="text-long-paragraph">
+                Para estar con 48 años con esto todavía, tienes que tener cierta
+                pasión.
+              </p>
+            </div>
+          </div>
+
+          <!-- END 1º PART -->
+        </div>
+      </div>
+
+      <!-- Interaction advise -->
+      <div class="interaction-container">
+        <h2 class="text-interaction text-mobile">
+          INTERACTUA CON EL OBJETO DE FONDO
+        </h2>
+        <h2 class="text-interaction text-desktop">
+          MUEVE EL RATÓN Y JUEGA CON EL SCROLL PARA INTERACTUAR CON EL OBJETO
+        </h2>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <!-- ==== SCRIPTS ==== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script type="module" src="./scripts/artist02.js"></script>
+    <script type="module" src="./scripts/aboutscript.js"></script>
+    <script type="module" src="./scripts/general-scripts.js"></script>
+  </body>
+</html>

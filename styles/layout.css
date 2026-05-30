@@ -1,0 +1,23 @@
+/* ===== LAYOUTS ===== */
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-align {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+/* =========================
+   OPACITY
+   ========================= */
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-1 {
+  opacity: 1;
+}
