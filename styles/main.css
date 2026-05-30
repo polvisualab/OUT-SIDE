@@ -21,6 +21,10 @@ body {
   height: 100%;
   overflow: hidden;
   overscroll-behavior: none;
+
+  /* color del pulgar | color del riel */
+  scrollbar-color: #000000 #ffffff00;
+  scrollbar-width: thin; /* Hace la barra más delgada */
 }
 
 body {
@@ -68,6 +72,15 @@ a:hover {
     z-index: 0;
     opacity: 0;
     transition: opacity 0.2s ease;
+  }
+
+  .img-layer-mobile {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 1;
   }
 
   img {
@@ -255,6 +268,10 @@ a:hover {
       height: 210%;
       rotate: 90deg;
       top: -50%;
+    }
+
+    .img-layer-mobile {
+      display: none;
     }
   }
 

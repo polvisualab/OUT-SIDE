@@ -52,7 +52,14 @@ loader.load("./assets/artist02/concrete_structure/scene.gltf", (gltf) => {
   model.scale.setScalar(1.2);
 
   const distance = size.length() * 0.2;
-  camera.position.set(3, 2, distance);
+  const isMobile = window.innerWidth < 780;
+
+  if (isMobile) {
+    camera.position.set(8, 2, distance * 1.8); // más alejado en móvil
+  } else {
+    camera.position.set(4, 2, distance);
+  }
+
   camera.near = distance * 0.1;
   camera.far = distance * 10;
   camera.updateProjectionMatrix();
