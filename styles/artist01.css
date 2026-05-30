@@ -6,8 +6,15 @@
 @import "./fonts.css";
 
 body {
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+main {
+  overflow: scroll;
+}
+
+.main-container {
+  overflow: scroll;
 }
 
 .info-quote-container {
