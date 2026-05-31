@@ -18,9 +18,9 @@
    ========================= */
 html,
 body {
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
-  height: auto;
+  min-height: 100dvh; /* dvh en vez de vh */
   /* color del pulgar | color del riel */
   scrollbar-color: #000000 #ffffff00;
   scrollbar-width: thin; /* Hace la barra más delgada */

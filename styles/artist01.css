@@ -1,9 +1,8 @@
-/* =========================
-   IMPORTS
-   ========================= */
-@import "./variables.css";
-@import "./reset.css";
-@import "./fonts.css";
+.artist-01-container {
+  overflow: visible;
+  height: auto;
+  margin-top: 40%;
+}
 
 .info-quote-container {
   transform: rotate(-12deg);
@@ -16,13 +15,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.sticky-img {
-  max-width: 80px;
+  overflow: visible;
+  height: auto;
 }
 
-.artist-01-container {
-  margin-top: 40%;
+.sticky-img {
+  max-width: 80px;
 }
 
 .model-container {
@@ -33,11 +31,13 @@
 
 .img-artist {
   position: relative;
+  width: 100%;
+  min-height: 300px;
+}
 
-  .cont-absolute {
-    position: absolute;
-    top: 0;
-  }
+.cont-absolute {
+  position: absolute;
+  top: 0;
 }
 
 /* ===== SCRAMBLE TEXT ===== */
@@ -47,8 +47,6 @@
   font-weight: 300;
   letter-spacing: -0.01em;
   line-height: 0.8;
-  /* margin-top: max(2rem, min(2.0712vw + 1.51456rem, 4rem)); */
-  /* padding-bottom: 1.1em; */
   position: relative;
   padding: 0 0.2em;
 
@@ -60,10 +58,6 @@
 
 .text-scramble__text {
   position: absolute;
-  /* bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0; */
   font-family: var(--font-secondary);
   text-transform: uppercase;
   text-align: justify;
@@ -79,15 +73,12 @@
 }
 
 .scramble-word {
-  background-color: var(--color-secondary); /* o el color que uses */
-  color: white; /* o el que contraste */
+  background-color: var(--color-secondary);
+  color: white;
   padding: 0 4px;
   display: inline-block;
 }
-
-/* Solo cuando tiene contenido, para que no aparezca el fondo vacío al inicio */
 .scramble-word:empty {
-  padding: 1rem;
   background: none;
 }
 
@@ -97,13 +88,21 @@
   width: auto;
 }
 
+canvas {
+  touch-action: none;
+}
+
 /* ===== SLIDER ANIMATION ===== */
 .slider {
   width: 100%;
   overflow: hidden;
   position: relative;
   align-content: center;
+
+  touch-action: pan-y;
 }
+
+/* SLIDER */
 
 .slider-track {
   display: flex;
@@ -122,6 +121,8 @@
   width: 380px;
   height: 600px;
   overflow: hidden;
+
+  touch-action: pan-y;
 }
 
 .slider-item img {
@@ -133,12 +134,10 @@
 }
 
 .slider-item:nth-child(odd) {
-  /* transform: rotate(-12deg); */
   animation: slider-odd-rotation 6s steps(20) infinite;
 }
 
 .slider-item:nth-child(even) {
-  /* transform: rotate(12deg); */
   animation: slider-even-rotation 6s steps(20) infinite;
 }
 
@@ -181,8 +180,9 @@ FLOATS
 .float-container {
   position: relative;
   width: 100%;
-  height: 80svh; /* o la altura que necesites */
-  /* SIN overflow: hidden */
+  height: 80svh;
+  min-height: 400px;
+  overflow: visible;
 }
 
 .float-item {
@@ -215,27 +215,32 @@ FLOATS
   }
 }
 
+.closing-container {
+  overflow: hidden;
+  padding-bottom: 20px; /* espacio para que la animación no se corte */
+}
+
 .closing-img {
   animation: float 7s ease-in-out infinite;
 }
 
 @keyframes float {
   0% {
-    transform: translateY(100px);
+    transform: translateY(20px);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(0px);
   }
   100% {
-    transform: translateY(100px);
+    transform: translateY(20px);
   }
 }
 
 /* =========================
    MEDIA QUERIES
    ========================= */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .artist-01-container {
     margin-top: 2%;
   }
-}
+} */

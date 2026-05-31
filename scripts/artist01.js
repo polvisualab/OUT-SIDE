@@ -35,6 +35,25 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   renderer.domElement.style.touchAction = "none";
 
+  // 👇 añade esto aquí
+  controls.enabled = false;
+
+  renderer.domElement.addEventListener(
+    "touchstart",
+    (e) => {
+      e.stopPropagation();
+    },
+    { passive: true },
+  );
+
+  renderer.domElement.addEventListener("pointerenter", () => {
+    controls.enabled = true;
+  });
+
+  renderer.domElement.addEventListener("pointerleave", () => {
+    controls.enabled = false;
+  });
+
   const ambientLight = new THREE.AmbientLight(0xffffff, 1);
   scene.add(ambientLight);
 
