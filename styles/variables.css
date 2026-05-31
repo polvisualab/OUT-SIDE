@@ -122,7 +122,6 @@
     background-color: var(--color-primary);
     color: var(--color-secondary);
     position: absolute;
-    z-index: 1;
     align-content: center;
 
     h2 {

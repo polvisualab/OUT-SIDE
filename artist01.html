@@ -22,11 +22,14 @@
       {
         "imports": {
           "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
-          "gsap": "https://cdn.skypack.dev/gsap"
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
         }
       }
     </script>
+
+    <!-- GSAP + ScrambleText
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrambleTextPlugin.min.js"></script> -->
   </head>
 
   <body>
@@ -193,6 +196,27 @@
               </div>
 
               <div class="img-artist">
+                <!-- SCRAMBLE TEXT -->
+                <div class="text-scramble__content cont-absolute">
+                  <p id="scramble-text-original">
+                    recrear en mis dibujos esa parte tan mágica que tiene el
+                    sueño
+                  </p>
+
+                  <p class="text-scramble__text" aria-hidden="true">
+                    <span id="scramble-text-1" class="scramble-word"></span>
+                    <span id="scramble-text-2" class="scramble-word"></span>
+                    <span id="scramble-text-3" class="scramble-word"></span>
+                    <span id="scramble-text-4" class="scramble-word"></span>
+                    <span id="scramble-text-5" class="scramble-word"></span>
+
+                    <img
+                      id="scramble-cursor"
+                      src="./assets/artist01/img/naia-scramble-symbol.png"
+                      alt="cursor" />
+                  </p>
+                </div>
+                <!-- IMG -->
                 <img
                   src="./assets/artist01/img/naia-02.webp"
                   alt="naia-03"
@@ -309,54 +333,54 @@
                 <div class="slider-track">
                   <div class="slider-item">
                     <img
-                      src="./assets/artist01/img/slider/naia-slider01.JPG"
+                      src="./assets/artist01/img/slider/naia-slider01.webp"
                       alt="slide-01" />
                   </div>
                   <div class="slider-item">
                     <img
-                      src="./assets/artist01/img/slider/naia-slider02.JPG"
+                      src="./assets/artist01/img/slider/naia-slider02.webp"
                       alt="slide-02" />
                   </div>
                   <div class="slider-item">
                     <img
-                      src="./assets/artist01/img/slider/naia-slider03.JPG"
+                      src="./assets/artist01/img/slider/naia-slider03.webp"
                       alt="slide-03" />
                   </div>
                   <div class="slider-item">
                     <img
-                      src="./assets/artist01/img/slider/naia-slider04.JPG"
+                      src="./assets/artist01/img/slider/naia-slider04.webp"
                       alt="slide-04" />
                   </div>
                   <div class="slider-item">
                     <img
-                      src="./assets/artist01/img/slider/naia-slider05.JPG"
+                      src="./assets/artist01/img/slider/naia-slider05.webp"
                       alt="slide-05" />
                   </div>
 
                   <!-- Duplicado para loop continuo -->
                   <div class="slider-item">
                     <img
-                      src="./assets/artist01/img/slider/naia-slider01.JPG"
+                      src="./assets/artist01/img/slider/naia-slider01.webp"
                       alt="slide-01" />
                   </div>
                   <div class="slider-item">
                     <img
-                      src="./assets/artist01/img/slider/naia-slider02.JPG"
+                      src="./assets/artist01/img/slider/naia-slider02.webp"
                       alt="slide-02" />
                   </div>
                   <div class="slider-item">
                     <img
-                      src="./assets/artist01/img/slider/naia-slider03.JPG"
+                      src="./assets/artist01/img/slider/naia-slider03.webp"
                       alt="slide-03" />
                   </div>
                   <div class="slider-item">
                     <img
-                      src="./assets/artist01/img/slider/naia-slider04.JPG"
+                      src="./assets/artist01/img/slider/naia-slider04.webp"
                       alt="slide-04" />
                   </div>
                   <div class="slider-item">
                     <img
-                      src="./assets/artist01/img/slider/naia-slider05.JPG"
+                      src="./assets/artist01/img/slider/naia-slider05.webp"
                       alt="slide-05" />
                   </div>
                 </div>
@@ -636,5 +660,6 @@
     <script type="module" src="./scripts/general-scripts.js"></script>
     <script type="module" src="./scripts/artist01.js"></script>
     <script type="module" src="./scripts/floats.js"></script>
+    <script type="module" src="./scripts/scrambletext.js"></script>
   </body>
 </html>

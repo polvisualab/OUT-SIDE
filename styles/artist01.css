@@ -10,22 +10,11 @@ body {
   overflow-x: hidden;
 }
 
-main {
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: auto;
-  box-sizing: border-box;
-}
-
 .main-container {
   overflow: scroll;
   height: 100%;
 }
 
-.artist-01-container {
-  /* Esto es lo que me estaba dando problema para el foookin scroll */
-  height: 100%;
-}
 .info-quote-container {
   transform: rotate(-12deg);
   padding: 2rem;
@@ -39,8 +28,7 @@ main {
   align-items: center;
 }
 .sticky-img {
-  min-width: 80px;
-  max-width: 150px;
+  max-width: 80px;
 }
 
 .artist-01-container {
@@ -53,33 +41,139 @@ main {
   background-color: var(--color-primary);
 }
 
+.img-artist {
+  position: relative;
+
+  .cont-absolute {
+    position: absolute;
+    top: 0;
+  }
+}
+
+/* ===== SCRAMBLE TEXT ===== */
+.text-scramble__content {
+  max-width: 40ch;
+  font-size: max(3rem, min(5.69579vw + 0.665049rem, 3rem));
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 0.8;
+  /* margin-top: max(2rem, min(2.0712vw + 1.51456rem, 4rem)); */
+  /* padding-bottom: 1.1em; */
+  position: relative;
+  padding: 0 0.2em;
+
+  p {
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+  }
+}
+
+.text-scramble__text {
+  position: absolute;
+  /* bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0; */
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+  text-align: justify;
+  transform: rotate(-12deg);
+  padding: 0 0.2em;
+}
+
+.text-scramble__text span {
+  word-break: break-word;
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.scramble-word {
+  background-color: var(--color-secondary); /* o el color que uses */
+  color: white; /* o el que contraste */
+  padding: 0 4px;
+  display: inline-block;
+}
+
+/* Solo cuando tiene contenido, para que no aparezca el fondo vacío al inicio */
+.scramble-word:empty {
+  padding: 1rem;
+  background: none;
+}
+
+.text-scramble__text img {
+  display: inline-block;
+  height: 4em;
+  width: auto;
+}
+
 /* ===== SLIDER ANIMATION ===== */
 .slider {
   width: 100%;
   overflow: hidden;
   position: relative;
+  align-content: center;
 }
 
 .slider-track {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  gap: 0;
   width: max-content;
   animation: slider-scroll 30s linear infinite;
 }
 
 .slider-item {
+  justify-items: center;
+  align-items: center;
+  margin: 0 -2rem;
+
   flex-shrink: 0;
-  width: 380px; /* ajusta según el ancho que quieras por item */
-  height: 500px; /* ajusta la altura */
+  width: 380px;
+  height: 600px;
   overflow: hidden;
 }
 
-.slider-item img,
-.slider-item video {
-  width: 100%;
-  height: 100%;
+.slider-item img {
+  padding-top: 2rem;
+  width: 85%;
+  height: auto;
   object-fit: cover;
   display: block;
+}
+
+.slider-item:nth-child(odd) {
+  /* transform: rotate(-12deg); */
+  animation: slider-odd-rotation 6s steps(20) infinite;
+}
+
+.slider-item:nth-child(even) {
+  /* transform: rotate(12deg); */
+  animation: slider-even-rotation 6s steps(20) infinite;
+}
+
+@keyframes slider-odd-rotation {
+  0% {
+    transform: rotate(-12deg);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+  100% {
+    transform: rotate(-12deg);
+  }
+}
+
+@keyframes slider-even-rotation {
+  0% {
+    transform: rotate(12deg);
+  }
+  50% {
+    transform: rotate(-12deg);
+  }
+  100% {
+    transform: rotate(12deg);
+  }
 }
 
 @keyframes slider-scroll {

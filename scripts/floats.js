@@ -5,7 +5,7 @@ gsap.registerPlugin(Draggable);
 
 const container = document.querySelector(".float-container");
 const items = document.querySelectorAll(".float-item");
-const ITEM_SIZE = 120; // mismo valor que el width de .float-item en CSS
+const ITEM_SIZE = 120;
 const floatTweens = new Map();
 
 function getBounds() {
