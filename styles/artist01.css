@@ -11,8 +11,7 @@ body {
 }
 
 .artist-01-container {
-  overflow: visible; /* o quita la propiedad overflow directamente */
-  /* Esto es lo que me estaba dando problema para el foookin scroll */
+  overflow-y: auto;
   height: 100%;
 }
 

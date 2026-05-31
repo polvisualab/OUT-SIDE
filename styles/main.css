@@ -18,15 +18,15 @@
    ========================= */
 html,
 body {
-  height: 100%;
-
+  overflow-y: scroll;
+  height: auto;
   /* color del pulgar | color del riel */
   scrollbar-color: #000000 #ffffff00;
   scrollbar-width: thin; /* Hace la barra más delgada */
 }
 
 body {
-  touch-action: none;
+  touch-action: auto;
 }
 
 /* =========================
