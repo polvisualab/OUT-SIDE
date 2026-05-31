@@ -11,8 +11,8 @@ body {
 }
 
 .artist-01-container {
-  overflow: scroll;
-  height: 100%;
+  overflow: visible; /* o quita la propiedad overflow directamente */
+  height: auto;
 }
 
 .info-quote-container {
