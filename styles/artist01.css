@@ -6,13 +6,14 @@
 @import "./fonts.css";
 
 body {
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .artist-01-container {
   overflow: visible; /* o quita la propiedad overflow directamente */
-  height: auto;
+  /* Esto es lo que me estaba dando problema para el foookin scroll */
+  height: 100%;
 }
 
 .info-quote-container {
