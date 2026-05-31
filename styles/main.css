@@ -19,8 +19,6 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
-  overscroll-behavior: none;
 
   /* color del pulgar | color del riel */
   scrollbar-color: #000000 #ffffff00;
@@ -28,7 +26,6 @@ body {
 }
 
 body {
-  height: 100vh;
   touch-action: none;
 }
 
