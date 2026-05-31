@@ -79,7 +79,7 @@
 /* 4º PART - Model 3D */
 .model-container {
   width: 100%;
-  height: 500px;
+  height: 40vh;
   background-color: var(--color-primary);
 }
 .img-artist {
@@ -113,8 +113,8 @@ canvas {
   margin: 0 -2rem;
 
   flex-shrink: 0;
-  width: 380px;
-  height: 600px;
+  width: 400px;
+  height: auto;
   overflow: hidden;
 
   touch-action: pan-y;
@@ -269,10 +269,242 @@ canvas {
     padding: 4vw;
 
     p {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 800;
-      line-height: 0.8;
       background-color: var(--color-secondary);
+      border: 1px solid var(--color-primary);
+    }
+  }
+
+  /* 1º PART - Interview - White bg  */
+  .part-01 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 6px;
+  }
+
+  .part-01-div01 {
+    grid-column: span 2 / span 2;
+    grid-row: span 6 / span 6;
+  }
+
+  .part-01-div02 {
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 3;
+  }
+
+  .part-01-div03 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 4;
+    grid-row-start: 4;
+  }
+
+  .part-01-div04 {
+    grid-row: span 3 / span 3;
+    grid-column-start: 6;
+    grid-row-start: 2;
+  }
+
+  /* 2º PART - Scramble Text + Img */
+  .part-02 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .part-02-div01 {
+    grid-column: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+
+  .part-02-div02 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 4;
+    grid-row-start: 1;
+  }
+
+  .text-scramble__text span {
+    word-break: break-word;
+    color: var(--color-secondary);
+    font-size: 6vw;
+  }
+  .scramble-word {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 100;
+  }
+  .text-scramble__text img {
+    display: inline-block;
+    height: 8em;
+    width: auto;
+  }
+
+  .text-scramble__text {
+    margin-top: 0;
+  }
+
+  /*  3º and 4º PART */
+  .part-03-04-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  /* 3º PART - Interview - Black BG */
+  .part-03 {
+    width: 130%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    margin-top: -20%;
+  }
+
+  .part-03-div01 {
+    grid-row: span 4 / span 4;
+  }
+
+  .part-03-div02 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 3;
+  }
+
+  .part-03-div03 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 2;
+  }
+
+  .part-03-div04 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 4;
+  }
+
+  /* 4º PART - Model 3D */
+  .model-container {
+    height: 100vh;
+    background-color: var(--color-primary);
+  }
+
+  /* 5º PART - Interview - White bg */
+  .part-05 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .part-05-div01 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+  }
+
+  .part-05-div02 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+  }
+
+  .part-05-div03 {
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 3;
+  }
+
+  .part-05-div04 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 5;
+  }
+
+  /* 6º PART - Slider  */
+  .slider-item {
+    width: 800px;
+  }
+
+  /* 7º and 8º PART */
+  .part-07-08-container {
+    height: auto;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .part-07 {
+    width: 130%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .part-07-div01 {
+    grid-row: span 2 / span 2;
+  }
+
+  .part-07-div02 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 3;
+  }
+
+  .part-07-div03 {
+    grid-column-start: 3;
+    grid-row-start: 2;
+  }
+
+  .part-07-div04 {
+    grid-column-start: 5;
+    grid-row-start: 2;
+  }
+
+  /* 8º PART */
+  .float-item {
+    width: 50%;
+  }
+
+  /* 9º PART */
+  .part-09 {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    gap: 3rem;
+
+    div {
+      display: flex;
+      gap: 2rem;
+    }
+
+    div:nth-child(odd) {
+      transform: rotate(-7deg);
+      background-color: var(--color-secondary);
+      margin-top: -5%;
+    }
+
+    div:nth-child(even) {
+      transform: rotate(-10deg);
+      background-color: var(--color-secondary);
+    }
+  }
+
+  .part-10 {
+    height: 100vh;
+    display: flex;
+  }
+
+  .part-11 {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    img {
+      height: 100vh;
     }
   }
 }

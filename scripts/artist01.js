@@ -92,13 +92,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  window.addEventListener("resize", () => {
+  // Y pon esto en su lugar:
+  const resizeObserver = new ResizeObserver(() => {
     const w = container.clientWidth;
     const h = container.clientHeight;
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     renderer.setSize(w, h);
   });
+
+  resizeObserver.observe(container);
 
   function animate() {
     requestAnimationFrame(animate);
