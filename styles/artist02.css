@@ -76,8 +76,25 @@ canvas {
    MEDIA QUERIES
    ========================= */
 @media (min-width: 768px) {
-  .info-quote-container {
+  /* .info-quote-container {
     transform: rotate(0deg);
+  } */
+
+  /* Info Quote */
+  .info-quote-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20%;
+    margin-top: -20px;
+
+    .quote-font {
+      font-size: 5vw;
+      line-height: 0.8;
+
+      margin-bottom: 3%;
+    }
   }
 
   .info-container {
@@ -85,7 +102,8 @@ canvas {
     transform: rotate(-2deg);
     padding-left: 3rem;
 
-    top: 30%;
+    top: 20%;
+    left: 5%;
   }
   .intro {
     width: 100%;

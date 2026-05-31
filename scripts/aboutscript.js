@@ -1,5 +1,5 @@
 const divs_data = [
-  { selector: ".div1", base: -8, axis: "x" },
+  { selector: ".div1", base: -12, axis: "x" },
   { selector: ".div2", base: 15, axis: "x" },
   { selector: ".div3", base: -25, axis: "y" },
 ];

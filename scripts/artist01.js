@@ -106,4 +106,17 @@ document.addEventListener("DOMContentLoaded", () => {
     renderer.render(scene, camera);
   }
   animate();
+  const divs = document.querySelectorAll(
+    ".info-quote-container, .part-00-div2, .part-00-div1",
+  );
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+
+    divs.forEach((div) => {
+      const speed = parseFloat(div.dataset.speed) || 0.02;
+      const rotation = -12 + scrollY * speed;
+      div.style.transform = `rotate(${rotation}deg)`;
+    });
+  });
 });

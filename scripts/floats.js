@@ -4,17 +4,8 @@ import { Draggable } from "https://cdn.skypack.dev/gsap/Draggable";
 gsap.registerPlugin(Draggable);
 
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".float-container");
   const items = document.querySelectorAll(".float-item");
-  const ITEM_SIZE = 120;
   const floatTweens = new Map();
-
-  function getBounds() {
-    return {
-      maxX: container.offsetWidth - ITEM_SIZE,
-      maxY: container.offsetHeight - ITEM_SIZE,
-    };
-  }
 
   function startFloat(el) {
     if (floatTweens.get(el)) floatTweens.get(el).kill();
@@ -31,27 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   items.forEach((item) => {
-    const { maxX, maxY } = getBounds();
     gsap.set(item, {
-      x: Math.random() * maxX,
-      y: Math.random() * maxY,
+      x: Math.random() * (window.innerWidth - item.offsetWidth),
+      y: Math.random() * (window.innerHeight - item.offsetHeight),
     });
     startFloat(item);
   });
 
   Draggable.create(".float-item", {
     type: "x,y",
-    // allowEventDefault: true, // 👈 esto permite el scroll en mobile
     onDragStart() {
       floatTweens.get(this.target)?.kill();
       this.target.classList.add("dragging");
       gsap.to(this.target, { scale: 1.05, duration: 0.15 });
-    },
-    onDrag() {
-      const { maxX, maxY } = getBounds();
-      const x = Math.min(Math.max(this.x, 0), maxX);
-      const y = Math.min(Math.max(this.y, 0), maxY);
-      gsap.set(this.target, { x, y });
     },
     onDragEnd() {
       this.target.classList.remove("dragging");

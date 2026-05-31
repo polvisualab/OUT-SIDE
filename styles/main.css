@@ -89,14 +89,19 @@ a:hover {
     opacity: 0;
   }
 
-  svg {
+  .svg-wrapper {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
     z-index: 1;
+    pointer-events: none;
+  }
+
+  .svg-wrapper svg {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -262,10 +267,14 @@ a:hover {
    ========================= */
 @media (min-width: 768px) {
   #hero {
-    svg {
-      height: 210%;
-      rotate: 90deg;
+    .svg-wrapper {
       top: -50%;
+      left: -5%;
+
+      svg {
+        height: 200%;
+        rotate: 90deg;
+      }
     }
 
     .img-layer-mobile {
