@@ -19,6 +19,7 @@
 html,
 body {
   overflow-y: scroll;
+  overflow-x: hidden;
   height: auto;
   /* color del pulgar | color del riel */
   scrollbar-color: #000000 #ffffff00;
