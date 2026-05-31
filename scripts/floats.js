@@ -40,6 +40,7 @@ items.forEach((item) => {
 
 Draggable.create(".float-item", {
   type: "x,y",
+  allowEventDefault: true, // 👈 esto permite el scroll en mobile
   onDragStart() {
     floatTweens.get(this.target)?.kill();
     this.target.classList.add("dragging");

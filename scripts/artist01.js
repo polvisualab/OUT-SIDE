@@ -28,6 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
   controls.autoRotate = true;
   controls.autoRotateSpeed = 2;
 
+  // 👇 añade esto justo aquí
+  controls.touches = {
+    ONE: THREE.TOUCH.ROTATE,
+    TWO: THREE.TOUCH.DOLLY_PAN,
+  };
+  renderer.domElement.style.touchAction = "none";
+
   const ambientLight = new THREE.AmbientLight(0xffffff, 1);
   scene.add(ambientLight);
 
@@ -36,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   scene.add(dirLight);
 
   // ── Carga MTL + OBJ ──────────────────────────────────────────
-  const basePath = "./assets/artist01/naia-modelo3d-01/"; // 👈 ruta base
+  const basePath = "./assets/artist01/naia-modelo3d-01/";
 
   const mtlLoader = new MTLLoader();
   mtlLoader.setPath(basePath);
