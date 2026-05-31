@@ -9,44 +9,45 @@ const tl = gsap.timeline({
   paused: true,
 });
 
-const cursorTl = gsap.timeline({ repeat: -1, paused: true });
+const cursorTl = gsap.timeline({ repeat: -1, paused: false });
 
 gsap.set("#scramble-text-original", { opacity: 0 });
 
 cursorTl
   .to("#scramble-cursor", {
     opacity: 0,
-    duration: 0.3,
+    duration: 0.5,
     ease: "none",
     delay: 0.2,
   })
   .to("#scramble-cursor", {
     opacity: 1,
-    duration: 0.3,
+    duration: 0.5,
     ease: "none",
     delay: 0.2,
   });
 
 tl.to("#scramble-text-1", {
-  scrambleText: { text: "recrear en mis dibujos", chars: "lowerCase" },
-  duration: 2,
+  scrambleText: { text: "recrear en mis ", chars: "lowerCase" },
+  duration: 0.8,
 })
   .to("#scramble-text-2", {
-    scrambleText: { text: "esa parte", chars: "lowerCase", speed: 0.4 },
-    duration: 1.2,
+    scrambleText: { text: "dibujos esa parte", chars: "lowerCase", speed: 0.4 },
+    duration: 0.8,
   })
   .to("#scramble-text-3", {
     scrambleText: { text: "tan mágica", chars: "lowerCase" },
-    duration: 1.2,
+    duration: 0.8,
   })
   .to("#scramble-text-4", {
     scrambleText: { text: "que tiene", chars: "lowerCase", speed: 0.3 },
-    duration: 0.7,
+    duration: 0.8,
   })
   .to("#scramble-text-5", {
     scrambleText: { text: "el sueño", chars: "lowerCase", speed: 0.3 },
-    duration: 1.2,
+    duration: 0.8,
   })
+
   .add(cursorTl);
 
 // SCROLL - OBSERVER

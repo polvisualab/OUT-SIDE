@@ -58,6 +58,7 @@
 
 .text-scramble__text {
   position: absolute;
+  margin-top: 40%;
   font-family: var(--font-secondary);
   text-transform: uppercase;
   text-align: justify;
