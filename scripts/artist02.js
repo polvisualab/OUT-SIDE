@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js"; // ✅
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const scene = new THREE.Scene();
@@ -23,14 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
   light1.position.set(-2, 4, 4);
   light1.castShadow = true;
   scene.add(light1);
-  // const light1Helper = new THREE.DirectionalLightHelper(light1, 1); // 1 = tamaño del helper
-  // scene.add(light1Helper);
 
   const light2 = new THREE.PointLight(0xffffff, 30);
   light2.position.set(3, 5, 2);
   scene.add(light2);
-  // const light2Helper = new THREE.PointLightHelper(light2, 1);
-  // scene.add(light2Helper);
 
   const textureLoader = new THREE.TextureLoader();
 

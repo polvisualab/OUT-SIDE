@@ -1,0 +1,177 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--color-secondary);
+  height: 100vh;
+  margin: 0px;
+  overflow: hidden;
+}
+
+#gallery {
+  height: 140vmax;
+  width: 140vmax;
+  position: absolute;
+}
+
+.tile {
+  position: absolute;
+  transition: transform 800ms ease;
+
+  a {
+    border: none;
+    background-color: transparent;
+  }
+
+  a:hover {
+    border: none;
+  }
+}
+
+.tile-link {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+}
+
+.tile-name {
+  position: absolute;
+  bottom: 30%;
+  z-index: 20;
+  opacity: 0;
+  font-family: var(--font-secondary);
+  font-size: 3vw;
+  line-height: 1;
+  transition: opacity 300ms ease;
+  background-color: var(--color-secondary);
+  transform: rotate(12deg);
+}
+
+.tile:hover .tile-name {
+  opacity: 1;
+}
+
+.tile:hover {
+  transform: scale(1.2);
+}
+
+.tile:hover > img {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.tile > img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: inherit;
+  opacity: 1;
+  transition:
+    opacity 800ms ease,
+    transform 800ms ease;
+}
+
+.tile:nth-child(odd):hover {
+  transform: rotate(-15deg);
+}
+
+.tile:nth-child(even):hover {
+  transform: rotate(15deg);
+}
+
+.tile:nth-child(1) {
+  background-color: rgba(0, 0, 0, 0);
+  height: 18%;
+  width: 25%;
+  left: 2%;
+  top: 8%;
+}
+
+.tile:nth-child(2) {
+  background-color: rgba(245, 65, 0, 0);
+  height: 30%;
+  width: 15%;
+  left: 35%;
+  top: 12%;
+}
+
+.tile:nth-child(3) {
+  background-color: rgba(239, 83, 80, 0);
+  height: 18%;
+  width: 26%;
+  left: 5%;
+  top: 35%;
+}
+
+.tile:nth-child(4) {
+  background-color: rgba(102, 187, 106, 0);
+  height: 20%;
+  width: 25%;
+  left: 45%;
+  top: 40%;
+}
+
+.tile:nth-child(5) {
+  background-color: rgba(170, 71, 188, 0);
+  height: 16%;
+  width: 32%;
+  left: 8%;
+  top: 60%;
+}
+
+.tile:nth-child(6) {
+  background-color: rgba(255, 168, 38, 0);
+  height: 24%;
+  width: 24%;
+  left: 58%;
+  top: 12%;
+  transform: rotate(-12deg);
+}
+
+.tile:nth-child(7) {
+  background-color: rgba(63, 81, 181, 0);
+  height: 16%;
+  width: 20%;
+  left: 45%;
+  top: 70%;
+}
+
+.tile:nth-child(8) {
+  background-color: rgba(141, 110, 99, 0);
+  height: 24%;
+  width: 18%;
+  left: 72%;
+  top: 42%;
+}
+
+.tile:nth-child(9) {
+  background-color: rgba(250, 250, 250, 0);
+  height: 10%;
+  width: 8%;
+  left: 84%;
+  top: 84%;
+}
+
+/* SVG WRAPPER */
+.svg-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  overflow: visible;
+  transform: rotate(-90deg);
+}
+
+.svg-wrapper svg {
+  width: 200%;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .svg-wrapper {
+    transform: rotate(0deg);
+  }
+}
