@@ -6,13 +6,6 @@
 @import "./fonts.css";
 
 /* =========================
-  ABOUT 
-   ========================= */
-body {
-  overflow-y: auto;
-}
-
-/* =========================
   ABOUT CONTAINER
    ========================= */
 .about-info {
@@ -62,7 +55,7 @@ footer {
   background-color: var(--color-primary);
   color: var(--font-secondary);
 
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
 
@@ -74,6 +67,7 @@ footer {
 
     font-family: var(--font-secondary);
     font-size: 1.1rem;
+    font-weight: 300;
     text-transform: uppercase;
     text-align: justify;
     line-height: 1;
