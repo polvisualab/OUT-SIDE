@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       y: `+=${gsap.utils.random(15, 30)}`,
       x: `+=${gsap.utils.random(-10, 10)}`,
       rotation: gsap.utils.random(-6, 6),
-      duration: gsap.utils.random(2.5, 4),
+      duration: gsap.utils.random(2, 4),
       ease: "sine.inOut",
       repeat: -1,
       yoyo: true,
