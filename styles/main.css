@@ -18,181 +18,46 @@
    ========================= */
 html,
 body {
+  cursor: none;
   overflow-y: auto;
   overflow-x: hidden;
   min-height: 100dvh; /* dvh en vez de vh */
   /* color del pulgar | color del riel */
-  scrollbar-color: #000000 #ffffff00;
+  scrollbar-color: #1e1e1e;
   scrollbar-width: thin; /* Hace la barra más delgada */
+  /* background-color: var(--color-secondary); */
 }
 
 body {
   touch-action: auto;
 }
 
-/* =========================
-   Ajustes Globales
-   ========================= */
-a {
-  padding: var(--spacing-small);
-  background-color: var(--color-secondary);
-  border: 1px solid var(--color-primary);
-
-  font-size: 1rem;
-}
-
-a:hover {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-  border: 1px solid var(--color-secondary);
-  font-weight: 1000;
-}
-
-.hidden {
-  display: none;
-}
-
-/* =========================
-   HERO
-   ========================= */
-/* #hero {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-
-  .img-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-  }
-
-  .img-layer-mobile {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    opacity: 1;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 40%;
-    opacity: 0;
-  }
-
-  .svg-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .svg-wrapper svg {
-    width: 100%;
-    height: 100%;
-  }
-} */
-
-/* #hero .img-layer.visible {
-  opacity: 1;
-} */
-
-/* =========================
-   NAV-GENERAL
-   ========================= */
-.menu-nav-general {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: right;
-  padding: 0 1rem;
-
-  position: fixed;
-  top: var(--spacing-xsmall);
-  right: var(--spacing-medium);
-
-  z-index: 2;
-
-  .menu-logo {
-    padding-left: 1rem;
-  }
-
-  .menu-permanent {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  .menu-logo a {
-    border: none;
-  }
-
-  .menu-logo .svg-logo a:hover {
-    border: none;
-    background-color: none;
-    transition: none;
-  }
-}
-
-.menu-nav-general .menu-element:first-child {
-  transform: rotate(-12deg);
-  margin: var(--spacing-xsmall);
-}
-
-.menu-nav-general .menu-element:last-child {
-  transform: rotate(12deg);
-  margin: var(--spacing-xsmall);
-}
-
-.menu-nav-general .menu-element:hover {
-  transform: rotate(0);
-  transform-origin: center;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-}
-
-/* =========================
-   NAV-ARTIST
-   ========================= */
-.menu-nav-artist {
-  width: 50%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-
+/* SVG WRAPPER */
+.svg-wrapper {
   position: absolute;
-  bottom: 14%;
-  left: 5%;
-  text-align: center;
-  z-index: 2;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  overflow: visible;
+  transform: rotate(-90deg);
 }
 
-.menu-nav-artist .menu-element:nth-child(odd) {
-  transform: rotate(10deg);
+.svg-wrapper svg {
+  position: absolute;
+  width: 200%;
+  flex-shrink: 0;
+
+  path {
+    fill: var(--color-primary);
+  }
 }
 
-.menu-nav-artist .menu-element:nth-child(odd):hover {
-  transform: rotate(0);
-}
-
-.menu-nav-artist .menu-element:nth-child(even) {
-  transform: rotate(-10deg) translateX(-20px);
-}
-
-.menu-nav-artist .menu-element:nth-child(even):hover {
-  transform: rotate(0);
+@media (min-width: 768px) {
+  .svg-wrapper {
+    transform: rotate(0deg);
+  }
 }
 
 /* =========================
@@ -259,32 +124,5 @@ a:hover {
   }
   100% {
     transform: translateX(-50%);
-  }
-}
-
-/* =========================
-   MEDIA QUERIES
-   ========================= */
-@media (min-width: 768px) {
-  .menu-nav-general {
-    top: var(--spacing-medium);
-  }
-
-  a {
-    font-size: 1.5rem;
-  }
-
-  .host-container {
-    p {
-      font-size: 2rem;
-    }
-  }
-
-  .menu-nav-artist {
-    width: 30%;
-
-    a {
-      margin-bottom: 20px;
-    }
   }
 }

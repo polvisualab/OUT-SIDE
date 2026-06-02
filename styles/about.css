@@ -8,6 +8,11 @@
 /* =========================
   ABOUT CONTAINER
    ========================= */
+
+body {
+  background-color: var(--color-secondary);
+}
+
 .about-info {
   overflow: scroll;
 }

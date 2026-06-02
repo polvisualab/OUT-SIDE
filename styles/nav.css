@@ -1,0 +1,18 @@
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  text-align: right;
+  z-index: 100;
+  right: 0;
+  padding: 0.4rem;
+  a {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+  }
+}
+
+/* =========================
+   MEDIA QUERIES
+   ========================= */
+@media (min-width: 768px) {
+}

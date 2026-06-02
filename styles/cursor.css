@@ -5,7 +5,9 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgb(0, 0, 0);
+  background: var(--color-primary);
+
+  border: 1px solid transparent;
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 10;
@@ -19,7 +21,8 @@
 #cursor-follower.hovering {
   width: 80px;
   height: 80px;
-  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0);
+  border-color: var(--color-primary);
 }
 
 #cursor-label {

@@ -19,6 +19,8 @@
   text-transform: uppercase;
   text-align: justify;
   line-height: 1;
+
+  color: var(--color-primary);
 }
 
 /* -- Interviewer info */

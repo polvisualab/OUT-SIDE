@@ -1,6 +1,8 @@
 body {
   overflow-y: auto;
   overflow-x: hidden;
+
+  background-color: var(--color-secondary);
 }
 
 canvas {
