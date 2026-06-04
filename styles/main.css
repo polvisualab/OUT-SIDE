@@ -23,7 +23,7 @@ body {
   overflow-x: hidden;
   min-height: 100dvh; /* dvh en vez de vh */
   /* color del pulgar | color del riel */
-  scrollbar-color: #1e1e1e;
+  scrollbar-color: var(--color-secondary);
   scrollbar-width: thin; /* Hace la barra más delgada */
   /* background-color: var(--color-secondary); */
 }
