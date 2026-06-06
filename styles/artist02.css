@@ -34,7 +34,6 @@ S canvas {
   z-index: 2;
   pointer-events: auto;
   /* overflow-x: hidden; */
-  background-color: var(--color-secondary);
 }
 
 .about-info {
@@ -122,6 +121,7 @@ S canvas {
     justify-content: center;
     align-items: center;
     padding: 10% 5rem;
+    background-color: var(--color-secondary);
 
     .quote-font {
       font-size: 5vw;
@@ -170,12 +170,6 @@ S canvas {
     h2 {
       font-size: 2rem;
     }
-
-    p {
-      font-size: 1.4rem;
-      font-weight: 800;
-      line-height: 0.8;
-    }
   }
 
   /* IMG */
@@ -190,6 +184,14 @@ S canvas {
 
     .text-desktop {
       display: block;
+    }
+  }
+
+  .parts-container {
+    p {
+      font-size: 1.4rem;
+      font-weight: 800;
+      line-height: 0.8;
     }
   }
 }

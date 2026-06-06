@@ -18,14 +18,6 @@ body {
 }
 
 .about-container {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  padding: 5% 15%;
-  text-align: justify;
-  padding-top: 40%;
-  line-height: 1.1;
-  margin-bottom: 50%;
 }
 
 .div1 {
@@ -84,37 +76,15 @@ footer {
    ========================= */
 @media (min-width: 768px) {
   .about-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 8px;
-    margin: 0;
+    width: 85%;
+    height: 100svh;
 
-    padding: 10%;
-
-    line-height: 100%;
-    font-size: 1.3em;
-    text-align: justify;
-  }
-
-  .div1 {
-    grid-row: span 5 / span 5;
-    transform: rotate(-12deg);
-  }
-
-  .div2 {
-    grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
-    grid-column-start: 3;
-    grid-row-start: 2;
-    transform: rotate(12deg);
-  }
-
-  .div3 {
-    grid-row: span 3 / span 3;
-    grid-column-start: 6;
-    grid-row-start: 3;
-    transform: rotate(-12deg);
+    p {
+      font-size: 5.5vh;
+      text-align: justify;
+      font-weight: 800;
+      line-height: 0.8;
+    }
   }
 
   footer {
