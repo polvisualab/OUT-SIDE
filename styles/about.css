@@ -64,13 +64,11 @@ footer {
 @media (min-width: 768px) {
   .about-container {
     width: 85%;
-    height: 100svh;
+    height: 100vh;
+    margin-bottom: 0;
 
     p {
       font-size: 5.5vh;
-      text-align: justify;
-      font-weight: 800;
-      line-height: 0.8;
     }
   }
 

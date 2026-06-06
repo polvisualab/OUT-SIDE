@@ -30,6 +30,7 @@ body {
 
 body {
   touch-action: auto;
+  accent-color: red;
 }
 
 /* SVG WRAPPER */

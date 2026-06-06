@@ -54,7 +54,7 @@ S canvas {
   height: 300px;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: var(--color-secondary);
+  /* background-color: var(--color-secondary); */
 }
 
 .sticky-img {
@@ -121,7 +121,7 @@ S canvas {
     justify-content: center;
     align-items: center;
     padding: 10% 5rem;
-    background-color: var(--color-secondary);
+    /* background-color: var(--color-secondary); */
 
     .quote-font {
       font-size: 5vw;
@@ -152,7 +152,7 @@ S canvas {
   .part-01 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 
     .div-01 {
       grid-column: span 3 / span 3;

@@ -114,7 +114,7 @@ canvas {
 .slider-item {
   justify-items: center;
   align-items: center;
-  margin: 0 -2rem;
+  margin: 0;
 
   flex-shrink: 0;
   width: 400px;
@@ -125,16 +125,19 @@ canvas {
 }
 .slider-item img {
   padding-top: 2rem;
-  width: 85%;
+  width: 100%;
   height: auto;
   object-fit: cover;
+  object-position: center;
   display: block;
+  border-radius: 50%;
+  border: solid 1px var(--color-primary);
 }
 .slider-item:nth-child(odd) {
-  animation: slider-odd-rotation 6s steps(20) infinite;
+  animation: slider-odd-rotation 6s linear infinite;
 }
 .slider-item:nth-child(even) {
-  animation: slider-even-rotation 6s steps(20) infinite;
+  animation: slider-even-rotation 6s linear infinite;
 }
 @keyframes slider-odd-rotation {
   0% {
