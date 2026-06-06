@@ -18,29 +18,16 @@ body {
 }
 
 .about-container {
+  width: 68%;
+  height: auto;
+  margin-bottom: 20%;
+  p {
+    font-size: 4vh;
+    text-align: justify;
+    font-weight: 800;
+    line-height: 0.8;
+  }
 }
-
-.div1 {
-  transform: rotate(-12deg);
-}
-
-.div2 {
-  transform: rotate(12deg);
-}
-
-.div3 {
-  transform: rotate(-10deg);
-}
-
-.div1,
-.div2,
-.div3 {
-  grid-column: unset;
-  grid-row: unset;
-  /* opacity 0 para que ScrollTrigger la controle */
-  opacity: 1;
-}
-
 /* =========================
    FOOTER
    ========================= */
