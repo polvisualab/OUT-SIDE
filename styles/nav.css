@@ -12,7 +12,7 @@
   gap: 0.4rem;
 
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(203, 203, 203, 0.12);
   /* border-radius: 16px; */
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(2.8px);

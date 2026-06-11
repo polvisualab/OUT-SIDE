@@ -54,102 +54,84 @@
 
     <!-- ==== MAIN ==== -->
     <main>
+      <!-- INTRO -->
+      <section class="archivo-info">
+        <p class="text">
+          En este archivo encontrarás cada volúmen de OUT-SIDE en el que podrás
+          acceder a las experiencies interactivas completas de cada volúmen
+        </p>
+      </section>
+
       <section class="archive-wrapper" id="archive-wrapper">
-        <!-- == Archive 01 == -->
+        <!-- == ARCHIVE 01 == -->
         <div class="archive-div-container">
           <!-- Archive Title -->
           <div class="archive-title">
-            <h2>Archive 01</h2>
-            <p>Description for Archive 01</p>
+            <h2>Volume #1</h2>
+            <p>
+              Exploramos los procesos individuales y vivencias del tatuaje con
+              Naia Escribano y el arte del graffiti con Ivan Armaláser.
+              <br />
+              <br />
+              <span> Entrevistas a cargo de Melanie German. </span>
+            </p>
           </div>
           <!-- Artists Container -->
           <div class="artists-container">
-            <!-- Artis 01 -->
-            <div>
-              <h3>Artist 01</h3>
-              <p>Description for Artist 01</p>
-            </div>
-            <!-- Artis 02 -->
-            <div>
-              <h3>Artist 02</h3>
-              <p>Description for Artist 02</p>
-            </div>
-            <!-- Artis 03 -->
-            <div>
-              <h3>Artist 03</h3>
-              <p>Description for Artist 03</p>
-            </div>
-          </div>
-          <!-- Button Container -->
-          <div>
-            <button class="button">
-              <a href="./index.html">View full experience</a>
-            </button>
-          </div>
-        </div>
+            <!-- Artist 01 -->
+            <a href="./artist01.html">
+              <div class="artist-container-div artist-01">
+                <div class="artist-archive-img">
+                  <img
+                    class="artist-container-img"
+                    src="./assets/artist01/img/naia-01.webp" />
+                </div>
 
-        <!-- == Archive 02 == -->
-        <div class="archive-div-container">
-          <!-- Archive Title -->
-          <div class="archive-title">
-            <h2>Archive 01</h2>
-            <p>Description for Archive 01</p>
-          </div>
-          <!-- Artists Container -->
-          <div class="artists-container">
-            <!-- Artis 01 -->
-            <div>
-              <h3>Artist 01</h3>
-              <p>Description for Artist 01</p>
-            </div>
-            <!-- Artis 02 -->
-            <div>
-              <h3>Artist 02</h3>
-              <p>Description for Artist 02</p>
-            </div>
-            <!-- Artis 03 -->
-            <div>
-              <h3>Artist 03</h3>
-              <p>Description for Artist 03</p>
-            </div>
-          </div>
-          <!-- Button Container -->
-          <div>
-            <button class="button">
-              <a href="./index.html">View full experience</a>
-            </button>
-          </div>
-        </div>
+                <!-- Archive 01-info -->
+                <div class="archive-artist-01">
+                  <h3>Naia Escribano</h3>
+                  <p>
+                    En esta entrevista, Naia Escribano reflexiona sobre su
+                    camino desde los estudios de biología hasta convertirse en
+                    tatuadora e ilustradora. Entre recuerdos de infancia,
+                    creatividad, arquitectura y tatuaje contemporáneo, comparte
+                    cómo encontró su voz artística y construyó una carrera que
+                    hoy la lleva a trabajar entre Berlín, Londres, París y
+                    Lisboa.
+                  </p>
+                </div>
+              </div>
+            </a>
 
-        <!-- == Archive 03 == -->
-        <div class="archive-div-container">
-          <!-- Archive Title -->
-          <div class="archive-title">
-            <h2>Archive 01</h2>
-            <p>Description for Archive 01</p>
-          </div>
-          <!-- Artists Container -->
-          <div class="artists-wrapper">
-            <!-- Artis 01 -->
-            <div class="artist-div">
-              <h3>Artist 01</h3>
-              <p>Description for Artist 01</p>
-            </div>
-            <!-- Artis 02 -->
-            <div class="artist-div">
-              <h3>Artist 02</h3>
-              <p>Description for Artist 02</p>
-            </div>
-            <!-- Artis 03 -->
-            <div class="artist-div">
-              <h3>Artist 03</h3>
-              <p>Description for Artist 03</p>
-            </div>
+            <!-- Artist 02 -->
+            <a href="./artist02.html">
+              <div class="artist-container-div artist-02">
+                <div class="artist-archive-img">
+                  <img
+                    class="artist-container-img"
+                    src="./assets/artist02/img/ivanarmalaser-03.png" />
+                </div>
+
+                <!-- Archive 01-info -->
+                <div class="archive-artist-01">
+                  <h3>Ivan Armalaser</h3>
+                  <p>
+                    En esta entrevista, Naia Escribano reflexiona sobre su
+                    camino desde los estudios de biología hasta convertirse en
+                    tatuadora e ilustradora. Entre recuerdos de infancia,
+                    creatividad, arquitectura y tatuaje contemporáneo, comparte
+                    cómo encontró su voz artística y construyó una carrera que
+                    hoy la lleva a trabajar entre Berlín, Londres, París y
+                    Lisboa.
+                  </p>
+                </div>
+              </div>
+            </a>
           </div>
           <!-- Button Container -->
           <div>
             <button class="button">
-              <a href="./index.html">View full experience</a>
+              <a href="./index.html">Accede a la experiencia</a>
             </button>
           </div>
         </div>
@@ -159,6 +141,7 @@
     <!-- ==== SCRIPTS ==== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="./scripts/cursor.js" async defer></script>
-    <!-- <script src="./scripts/aboutscript.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js"></script>
+    <script src="./scripts/textappear.js"></script>
   </body>
 </html>

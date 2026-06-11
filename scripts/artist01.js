@@ -28,14 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
   controls.autoRotate = true;
   controls.autoRotateSpeed = 2;
 
-  // 👇 añade esto justo aquí
   controls.touches = {
     ONE: THREE.TOUCH.ROTATE,
     TWO: THREE.TOUCH.DOLLY_PAN,
   };
   renderer.domElement.style.touchAction = "none";
 
-  // 👇 añade esto aquí
   controls.enabled = false;
 
   renderer.domElement.addEventListener(
@@ -61,14 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
   dirLight.position.set(5, 10, 7);
   scene.add(dirLight);
 
-  // ── Carga MTL + OBJ ──────────────────────────────────────────
+  // OBJ
   const basePath = "./assets/artist01/naia-modelo3d-01/";
 
   const mtlLoader = new MTLLoader();
   mtlLoader.setPath(basePath);
   mtlLoader.setResourcePath(basePath);
   mtlLoader.load("3DModel.mtl", (materials) => {
-    // 👈 nombre de tu .mtl
     materials.preload();
 
     const objLoader = new OBJLoader();
@@ -92,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Y pon esto en su lugar:
   const resizeObserver = new ResizeObserver(() => {
     const w = container.clientWidth;
     const h = container.clientHeight;

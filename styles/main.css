@@ -26,11 +26,20 @@ body {
   scrollbar-color: var(--color-secondary);
   scrollbar-width: thin; /* Hace la barra más delgada */
   /* background-color: var(--color-secondary); */
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+  }
+
+  /* Para navegadores antiguos basados en Mozilla Firefox */
+  ::-moz-selection {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+  }
 }
 
 body {
-  touch-action: auto;
-  accent-color: red;
+  background-color: var(--color-secondary);
 }
 
 /* SVG WRAPPER */

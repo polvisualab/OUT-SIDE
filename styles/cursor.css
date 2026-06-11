@@ -7,7 +7,7 @@
   border-radius: 50%;
   background: var(--color-primary);
 
-  border: 1px solid transparent;
+  border: 0.5px solid var(--color-secondary);
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 50;

@@ -61,7 +61,7 @@ S canvas {
   width: 100%;
 
   img {
-    width: 100%;
+    width: 50%;
   }
 }
 
@@ -193,5 +193,10 @@ S canvas {
       font-weight: 800;
       line-height: 0.8;
     }
+  }
+
+  /*  ===== 6º PART - Interview - White bg   ===== */
+  .part-06 {
+    margin-bottom: 40px;
   }
 }

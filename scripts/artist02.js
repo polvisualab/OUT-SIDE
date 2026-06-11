@@ -3,7 +3,6 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Apunta al contenedor y al canvas del HTML
   const container = document.querySelector(".canvas-col");
   const canvas = document.getElementById("threejs-canvas");
 
@@ -18,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     1000,
   );
 
-  // Usa el canvas existente en lugar de crear uno nuevo
   const renderer = new THREE.WebGLRenderer({
     canvas,
     antialias: true,
@@ -28,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.shadowMap.enabled = true;
-  // Ya NO hagas document.body.appendChild, el canvas ya está en el HTML
 
   scene.add(new THREE.AmbientLight(0xffffff, 3));
 

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.to(follower, {
       left: e.clientX,
       top: e.clientY,
-      duration: 0.8, // delay del seguimiento
+      duration: 0.8,
       ease: "power3.out",
     });
   });

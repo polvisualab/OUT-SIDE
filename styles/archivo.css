@@ -1,28 +1,65 @@
+button {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.archivo-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+
+  p {
+    font-size: 4vh;
+    text-align: justify;
+    font-weight: 800;
+    line-height: 0.8;
+  }
+}
+
 .archive-wrapper {
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
-  border: 1px solid #ccc;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  p {
+    line-height: 0.8;
+    font-weight: 400;
+    text-align: justify;
+  }
+
+  h3 {
+    font-family: var(--font-secondary);
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
 }
 
 .archive-div-container {
   margin: 1%;
-  width: 90%;
+  width: 80%;
   height: 100%;
 
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
+  justify-content: center;
 
   gap: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-primary);
   padding: 1rem;
 }
 
+/* WRAPPER */
 .artists-wrapper {
   display: flex;
   flex-direction: column;
@@ -30,8 +67,71 @@
   gap: 2rem;
 }
 
+.artists-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 1.2rem;
+
+  .artist-container-div {
+    padding: 1rem;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.artist-container-div:hover {
+  transform: translateY(-5px);
+}
+
+.archive-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  h2 {
+    font-family: var(--font-secondary);
+    font-size: 4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+.artist-archive-img {
+  height: 300px;
+  padding-bottom: 1.2rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    /* border-radius: 30px; */
+    border: 1px solid var(--color-primary);
+    /* transform: rotate(12deg); */
+  }
+}
+
 /* =========================
    MEDIA QUERIES
    ========================= */
 @media (min-width: 768px) {
+  button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+  }
+
+  .artists-wrapper {
+    flex-direction: row;
+    gap: 4rem;
+  }
+
+  .artists-container {
+    flex-direction: row;
+    gap: 2rem;
+  }
 }

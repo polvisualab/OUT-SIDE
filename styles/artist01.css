@@ -210,17 +210,17 @@ canvas {
   padding-bottom: 20px; /* espacio para que la animación no se corte */
 }
 .closing-img {
-  animation: float 7s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
 }
 @keyframes float {
   0% {
-    transform: translateY(20px);
+    transform: translateY(100px);
   }
   50% {
     transform: translateY(0px);
   }
   100% {
-    transform: translateY(20px);
+    transform: translateY(100px);
   }
 }
 
@@ -486,6 +486,7 @@ canvas {
     div {
       display: flex;
       gap: 2rem;
+      border: 1px solid var(--color-primary);
     }
 
     div:nth-child(odd) {
@@ -500,14 +501,45 @@ canvas {
     }
   }
 
+  /* 10º PART */
   .part-10 {
-    height: 100vh;
+    width: 100%;
     display: flex;
+
+    .part-10-video video {
+      margin-top: -80px;
+      width: 94%;
+    }
+
+    .part-10-content {
+      width: 100%;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 32px;
+
+      .part-10-content-div01 {
+        height: 10px;
+        grid-column: span 3 / span 3;
+      }
+
+      .part-10-content-div02,
+      .part-10-content-div03,
+      .part-10-content-div04 {
+        grid-row-start: 2;
+      }
+
+      .part-10-content-div05 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 3;
+      }
+    }
   }
 
   .part-11 {
-    display: flex;
     width: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
     img {
